@@ -126,28 +126,42 @@ export default function GameDesc(){
                 <div className={style.description}>
                         <p>Genre : {genres.map(genre =>{
                             return(
-                                <span key={genre.id} title={`see all ${genre.name} games`}>
-                                    <Link href="">{genre.name + " "}</Link>
+                                <span 
+                                    className={style.link}
+                                    key={genre.id} 
+                                    title={`see all ${genre.name} games`}>
+                                    <Link href="">{` ${genre.name}, `}</Link>
                                 </span>
                             )
                         })}</p>
-                    <p>Publisher : <span title={`see other games by ${developers[0].name}`}>
-                        <Link href="">{developers[0].name}</Link>    
+                    <p>Publisher : <span 
+                        className={style.link}
+                        title={`see other games by ${developers[0].name}`}>
+                        <Link href="" >{developers[0].name}</Link>    
                         </span>
                     </p>
                     <p>Platforms : 
                         {platform.map(platform =>{
                             return (
                                 <span
+                                className={style.link}
                                 title={`see all ${platform.platform.name} games`}
                                 key={platform.platform.id}>
-                                    <Link href="">{`${platform.platform.name} `}</Link>
+                                    <Link href="">{` ${platform.platform.name},`}</Link>
                                 </span>
                             )
                         })}
                     </p>
-                    <p>Who can play: {player.name}</p>
-                    <p>Oficial website: <Link href="">{link}</Link></p>
+                    <p>Who can play: 
+                        <span className={style.link}>
+                            {player.name}
+                        </span>
+                    </p>
+                    <p>Oficial website: 
+                        <span className={style.link}>
+                            <Link href="">{` ${link}`}</Link>
+                        </span>
+                    </p>
                 </div>
             </div>
             

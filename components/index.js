@@ -3,6 +3,7 @@ import Topnav from "./Topnav";
 import MainBanner from "./MainBanner";
 import GameDesc from "./GameDescription";
 import GamePicCarousel from "./GamePicCarousel";
+import GameStory from "./GameStory";
 
 export default function Components(){
     return(
@@ -12,6 +13,7 @@ export default function Components(){
             MainBanner,
             GameDesc,
             GamePicCarousel,
+            GameStory,
         }
     )
 }

@@ -7,10 +7,10 @@
    display: flex;
    flex-direction: column;
    gap: 2rem;
-}
+} 
 .btnContainer{
     display: flex;
-    gap: .5rem;
+    gap: 2rem;
 }
 .btn{
     padding: 1rem 2rem;
@@ -19,7 +19,7 @@
 }
 .btnContent{
     display: flex;
-    gap: .5rem;
+    gap: 2rem;
     align-items: center;
 }
 .buyBtn{
@@ -29,7 +29,7 @@
     background-color: var(--cyan-bg-col);
 }
 .buyBtn svg{
-    transform: scale(1.2);
+    transform: scale(2);
 }
 .addBtn{
     background-color: var(--main-bg-col);
@@ -42,13 +42,13 @@
     color: var(--main-bg-col);
 }
 .addBtn svg{
-    transform: scale(1.7);
+    transform: scale(2.5);
 }
 .addBtn p, .addBtn svg{
     color: var(--text-col);
 }
 .addBtn p, .buyBtn p{
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 .container > div{
     flex-basis: 50%;
@@ -64,7 +64,10 @@
     margin-top: 1rem;
 }
 .description p{
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+.link:hover{
+    text-decoration: underline;    
 }
 @media(max-width : 900px){
     .container{
@@ -77,8 +80,17 @@
     .btn{
         padding: .5em 1rem;
     }
+    .btnContainer{
+        gap: 1rem;
+    }
+    .btnContent{
+        gap: 1rem;
+    }
     .btn svg{
         transform: scale(1);
+    }
+    .btn p{
+        font-size: 1rem;
     }
     .description p{
         font-size: 1rem;
