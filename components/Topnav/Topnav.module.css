@@ -1,0 +1,55 @@
+.header{
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: -1px;
+    z-index: 2;
+}
+.logoContainer h1{
+    color: var(--text-col);
+    font-size: 2rem;
+    font-weight: 700;
+}
+.logoContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.logo{
+    display: block;
+    transform: scale(.8);
+}
+.back{
+    display: none;
+}
+.menu{
+    display: none;
+}
+
+.back svg, .menu svg{
+    transform: scale(1.3);
+}
+
+@media (max-width: 900px){
+    .logoContainer h1{
+        font-size: 1rem;
+    }
+}
+@media(max-width: 478px){
+    .header{
+        padding: 1rem;
+    }
+    .logoContainer{
+        flex-basis: 100%;
+    }
+    .logoContainer h1, .logo{
+        display: none;
+    }
+    .back, .menu{
+        display: block;
+    }
+}

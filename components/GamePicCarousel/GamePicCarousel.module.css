@@ -1,0 +1,92 @@
+.mainContainer{
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    flex-direction: column;
+}
+.carouselContainer{
+    flex-basis: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.toggleBtn{
+    padding: 1.5rem;
+    border-radius: 50%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s ease-in;
+    opacity: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.toggleBtn:hover{
+    outline: none;
+    border: none;
+    opacity: 1;
+    background-color: rgba(238, 238, 238, 0.253);
+}
+.toggleBtn svg{
+    transform: scale(3);
+}
+.imgShowContainer{
+    flex-basis: 75%;
+    transition: .3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+.imgShow{
+   position: relative;
+    display: flex;
+   filter: brightness(.7);
+   transition: .5s ease-in;
+}
+.imgShow span{
+   min-width: 100%;
+   height: auto;
+}
+.imgShow:hover{
+    filter: brightness(.9);
+}.carouselImgContainer{
+    min-width:100%;
+    overflow: hidden;
+}
+.carouselImgContainer div{
+    display: flex;
+    gap: .5rem;
+    transition: .5s ease-in-out;
+}
+.carouselImgContainer span{
+    transition: .3s ease-in;
+    min-width: 50%;
+    filter: brightness(.7);
+    cursor: pointer;
+}
+.carouselImgContainer span:hover{
+    filter: brightness(.9);
+}
+@media(max-width: 600px){
+    .carouselContainer{
+        gap: .5rem;
+    }
+    .imgShowContainer{
+        display: none;
+    }
+    .toggleBtn{
+        position: absolute;
+        z-index: 3;
+    }
+    .toggleBtn:first-child{
+        left: 0;
+    }
+    .toggleBtn:last-child{
+        right: 0;
+    }
+}

@@ -1,0 +1,11 @@
+.container{
+    display: block;
+}
+#image span{
+    transform: scale(.8);
+}
+@media(max-width: 600px){
+    .container{
+        display: none;
+    }
+}

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+
+:root{
+  font-size: 16px;
+  --main-bg-col: #222831;
+  --second-bg-col: #393E46;
+  --text-col: #eeeeee;
+  --cyan-bg-col: #00FFF5;
+  --green-bg-col: #00FFAB;
+  --red-bg-col: #FD5D5D;
+  --gold-bg-col: #ECCE85;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: var(--main-bg-col);
+  color: var(--text-col);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  color: var(--text-col);
+}
+button{
+  cursor: pointer;
+  outline: none;
+  border: none;
+}

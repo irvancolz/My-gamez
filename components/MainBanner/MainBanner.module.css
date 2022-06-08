@@ -1,0 +1,44 @@
+.container{
+    position: relative;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+.image{
+    min-width: 100%;
+    height: 100%;
+}
+.image span{
+    min-width: 100%;
+}
+.image img{
+    filter: brightness(.6);
+}
+.titleContainer{
+    position: absolute;
+    left: 6rem;
+    bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.title{
+    font-size: 4rem;
+    font-weight: 600;
+}
+.bookmark svg{
+    transform: scale(4);
+    cursor: pointer;
+}
+@media(max-width : 600px){
+    .titleContainer{
+        left: 1rem;
+        gap: 1rem;
+    }
+    .title{
+        font-size: 2.5rem;
+    }
+    .bookmark svg{
+        transform: scale(2);
+    }
+}
