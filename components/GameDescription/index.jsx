@@ -107,16 +107,16 @@ export default function GameDesc(){
 
 
     return (
-        <section className={style.container} >
+        <section className={`${style.mainContainer} container`} >
             <div className={style.descContainer}>
                 <div className={style.btnContainer}>
-                    <button type='button' className={`${style.buyBtn} ${style.btn}`}>
+                    <button type='button' className={`${style.buyBtn} btn`}>
                         <div className={style.btnContent}>
                             <FiShoppingCart />
                             <p>Buy Now</p>
                         </div>
                     </button>
-                    <button type='button' className={`${style.addBtn} ${style.btn}`}>
+                    <button type='button' className={`${style.addBtn} btn`}>
                         <div className={style.btnContent}>
                             <IoAdd />
                             <p>My favourite</p>

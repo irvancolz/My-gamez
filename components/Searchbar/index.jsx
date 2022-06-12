@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import style from "./Searchbar.module.css";
-import {ImCancelCircle} from 'react-icons/im'
-import {FiSearch} from 'react-icons/fi'
+import {FiSearch, FiX} from 'react-icons/fi'
 
 
 export default function Searchbar(){
@@ -29,13 +28,12 @@ export default function Searchbar(){
                         placeholder="Search games" />
                 </div>
                 <div className={style.formGroup}>
-                <button 
-                    type="button"
+                <div 
                     title="clear search"
                     onClick={clearSearch}
                     >
-                    <ImCancelCircle />
-                </button>
+                    <FiX />
+                </div>
                 </div>
             </div>
         </form>

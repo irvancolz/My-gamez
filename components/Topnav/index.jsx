@@ -1,3 +1,4 @@
+import {useRef, useEffect, useState} from 'react'
 import style from "./Topnav.module.css"
 import SideNav from "../SideNav"
 import Searchbar from "../Searchbar";
@@ -5,8 +6,26 @@ import { IoArrowBack,IoEllipsisVertical } from "react-icons/io5";
 
 
 export default function Topnav(){
+    const navRef = useRef();
+    const [isScrolled, setIsScrolled] = useState(false);
+    
+    useEffect(()=>{
+        const navHeight = navRef.current.clientHeight;
+        window.addEventListener('scroll', ()=>{
+            if(window.pageYOffset > navHeight){
+                setIsScrolled(true)
+            }else{
+                setIsScrolled(false)
+            }
+        })
+    })
     return(
-        <header className={style.header}>
+        <header 
+            ref={navRef} 
+            className={`${style.header} scroll container`}
+            style={{
+                background: `${isScrolled ? 'var(--second-bg-col' : 'none'}`
+            }}>
             <div className={style.logoContainer}>
                     <div className={style.logo}> 
                         <svg width="64" height="48" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">

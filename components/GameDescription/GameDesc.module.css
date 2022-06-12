@@ -1,6 +1,5 @@
-.container{
+.mainContainer{
     display: flex;
-    padding: 3rem 6rem;
     justify-content: space-between;
 }
 .descContainer{
@@ -12,15 +11,13 @@
     display: flex;
     gap: 2rem;
 }
-.btn{
-    padding: 1rem 2rem;
-    border-radius: .25rem;
-    transition: background-color .3s ease-in-out;
-}
 .btnContent{
     display: flex;
     gap: 2rem;
     align-items: center;
+}
+.btnContent p{
+    font-size: 1.5rem;
 }
 .buyBtn{
     background-color: var(--green-bg-col);
@@ -47,9 +44,6 @@
 .addBtn p, .addBtn svg{
     color: var(--text-col);
 }
-.addBtn p, .buyBtn p{
-    font-size: 1.5rem;
-}
 .container > div{
     flex-basis: 50%;
 }
@@ -63,23 +57,16 @@
 .description p:not(:first-child){
     margin-top: 1rem;
 }
-.description p{
-    font-size: 1.5rem;
-}
 .link:hover{
     text-decoration: underline;    
 }
 @media(max-width : 900px){
-    .container{
-        padding: 1rem;
+    .mainContainer{
         flex-direction: column;
         gap: 2rem;
     }
 }
 @media(max-width : 600px){
-    .btn{
-        padding: .5em 1rem;
-    }
     .btnContainer{
         gap: 1rem;
     }
@@ -88,12 +75,6 @@
     }
     .btn svg{
         transform: scale(1);
-    }
-    .btn p{
-        font-size: 1rem;
-    }
-    .description p{
-        font-size: 1rem;
     }
     .description p:not(:first-child){
         margin-top: .25rem;

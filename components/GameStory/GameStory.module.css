@@ -1,3 +1,23 @@
 .mainContainer{
     position: relative;
 }
+.article{
+    margin-top: 2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: .5s linear;
+}
+.toggleBtn{
+    margin-top: 1rem;
+    border: 1px solid var(--text-col);
+    background-color: var(--second-bg-col);
+    color: var(--text-col);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: .5s ease-in-out;
+}
+.toggleBtn:hover{
+    border: 1px solid var(--second-bg-col);
+    background-color: var(--text-col);
+    color: var(--main-bg-col);
+}
