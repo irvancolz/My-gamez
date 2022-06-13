@@ -4,6 +4,7 @@ import MainBanner from "./MainBanner";
 import GameDesc from "./GameDescription";
 import GamePicCarousel from "./GamePicCarousel";
 import GameStory from "./GameStory";
+import Reviews from "./Reviews";
 
 export default function Components(){
     return(
@@ -14,6 +15,7 @@ export default function Components(){
             GameDesc,
             GamePicCarousel,
             GameStory,
+            Reviews,
         }
     )
 }

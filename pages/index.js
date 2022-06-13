@@ -8,7 +8,8 @@ export default function Home() {
     Topnav, 
     MainBanner,
     GameDesc,
-    GameStory} = Components()
+    GameStory,
+    Reviews} = Components()
 
   function getGames(){
     fetch(`https://rawg.io/api/games/622492/achievements?&key=${key}`)
@@ -25,6 +26,7 @@ export default function Home() {
       <MainBanner />
       <GameDesc />
       <GameStory />
+      <Reviews />
       <p>requirements</p>
       <p>achievements</p>
       <p>same series</p>
