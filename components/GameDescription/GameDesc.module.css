@@ -73,8 +73,8 @@
     .btnContent{
         gap: 1rem;
     }
-    .btn svg{
-        transform: scale(1);
+    .btnContent p{
+        font-size: 1rem;
     }
     .description p:not(:first-child){
         margin-top: .25rem;

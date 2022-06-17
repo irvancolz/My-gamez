@@ -1,0 +1,73 @@
+.container h1{
+   margin-bottom: 2rem;
+}
+.ratingHeader{
+    border: 2px solid var(--text-col);
+    border-radius: .25rem;
+    padding: 1rem 1rem;
+    background-color: var(--second-bg-col);
+    width: fit-content;
+}
+.ratingContainer{
+    margin-top: 2rem;
+}
+.starContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rateBtn{
+    padding: .25rem .5rem;
+    background-color: var(--second-bg-col);
+}
+.rateBtn p{
+    color: var(--text-col);
+}
+.rateBtn p:hover{
+    text-decoration: underline;
+}
+.fillStar, .outlineStar{
+    cursor: pointer;
+    color: var(--gold-bg-col);
+}
+.rating{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.rating p:first-child{
+    flex-basis: 15%;
+}
+.rating p:last-child{
+    text-align: end;
+    flex-basis: 10%;
+}
+.ReviewBar{
+    flex-basis: 75%;
+}
+.ReviewBar div{
+    padding: .3rem;
+    border-radius: 0 .6rem .6rem 0;
+    transition: width .5s ease-in-out;
+}
+@media (max-width: 900px){
+    .rating p:first-child{
+        flex-basis: 30%;
+    }
+    .ReviewBar div{
+        flex-basis: 65%;
+    }
+}
+@media(max-width: 600px){
+    .ratingContainer .rating:not(:first-child){
+        margin-top: 1rem;
+    }
+    .rating{
+        flex-direction: column;
+        gap: .25rem;
+        align-items: flex-start;
+    }
+    .ReviewBar{
+        width: 100%;
+    }
+}

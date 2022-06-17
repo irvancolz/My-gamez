@@ -130,14 +130,14 @@ export default function GameDesc(){
                                     className={style.link}
                                     key={genre.id} 
                                     title={`see all ${genre.name} games`}>
-                                    <Link href="">{` ${genre.name}, `}</Link>
+                                    <Link href="#">{` ${genre.name}, `}</Link>
                                 </span>
                             )
                         })}</p>
                     <p>Publisher : <span 
                         className={style.link}
                         title={`see other games by ${developers[0].name}`}>
-                        <Link href="" >{developers[0].name}</Link>    
+                        <Link href="#" >{developers[0].name}</Link>    
                         </span>
                     </p>
                     <p>Platforms : 
@@ -147,7 +147,7 @@ export default function GameDesc(){
                                 className={style.link}
                                 title={`see all ${platform.platform.name} games`}
                                 key={platform.platform.id}>
-                                    <Link href="">{` ${platform.platform.name},`}</Link>
+                                    <Link href="#">{` ${platform.platform.name},`}</Link>
                                 </span>
                             )
                         })}
@@ -159,7 +159,7 @@ export default function GameDesc(){
                     </p>
                     <p>Oficial website: 
                         <span className={style.link}>
-                            <Link href="">{` ${link}`}</Link>
+                            <Link href="#">{` ${link}`}</Link>
                         </span>
                     </p>
                 </div>
