@@ -11,7 +11,10 @@
   --red-bg-col: #FD5D5D;
   --gold-bg-col: #ECCE85;
 }
-html,
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
+}
 body {
   font-size: 1.5rem;
   padding: 0;

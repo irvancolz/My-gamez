@@ -77,7 +77,7 @@ export default function AddRating(){
                         </div>
                     </div>
                     <div className={style.formGroup}>
-                        <label className={style.label} for="review">Add a review</label>
+                        <label className={style.label} htmlFor="review">Add a review</label>
                         <textarea
                             rows="5"
                             name='review' 

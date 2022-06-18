@@ -1,4 +1,5 @@
 import style from './Requirements.module.css';
+import RequirementsContent from '../RequirementsContent';
 
 export default function Requirements(){
 
@@ -52,14 +53,12 @@ export default function Requirements(){
     return(
         <section className={`container`}>
             <h1 className='title'>system requirements</h1>
-            <div className="requirementsHeader">
-                <div className={style.requirement}>
-                    <h3 className='title'>pc</h3>
-                    <div className="requirementDesc">
-                        <p>{requirement[2].requirements.minimum}</p>
-                        <p>{requirement[2].requirements.recommended}</p>
-                    </div>
-                </div>
+            <div className={style.requirementsContainer}>
+                {requirement.map((item, index)=>{
+                    return(
+                    <RequirementsContent content={item} key={index}/>
+                    )
+                })}
             </div>
         </section>
     )
