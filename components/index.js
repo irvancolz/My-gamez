@@ -6,6 +6,7 @@ import GamePicCarousel from "./GamePicCarousel";
 import GameStory from "./GameStory";
 import Ratings from "./Ratings";
 import Requirements from "./Requirements";
+import Achievements from "./Achievements";
 
 export default function Components(){
     return(
@@ -17,7 +18,8 @@ export default function Components(){
             GamePicCarousel,
             GameStory,
             Ratings,
-            Requirements
+            Requirements,
+            Achievements,
         }
     )
 }

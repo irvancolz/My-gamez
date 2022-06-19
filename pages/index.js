@@ -10,7 +10,8 @@ export default function Home() {
     GameDesc,
     GameStory,
     Ratings,
-    Requirements} = Components()
+    Requirements,
+    Achievements} = Components()
 
   function getGames(){
     fetch(`https://rawg.io/api/games/622492/achievements?&key=${key}`)
@@ -28,8 +29,10 @@ export default function Home() {
       <GameDesc />
       <GameStory />
       <Ratings />
-      <Requirements />
-      <p>achievements</p>
+      <div className='wrapper'>
+        <Requirements />
+        <Achievements />
+      </div>
       <p>same series</p>
       <p>same categories</p>
       <p>tags</p>

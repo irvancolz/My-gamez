@@ -51,7 +51,7 @@ export default function Requirements(){
         }
     ]
     return(
-        <section className={`container`}>
+        <section className={`${style.container} container`}>
             <h1 className='title'>system requirements</h1>
             <div className={style.requirementsContainer}>
                 {requirement.map((item, index)=>{

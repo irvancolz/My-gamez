@@ -1,3 +1,9 @@
+.requirement{
+    border-radius: .5rem;
+}
+.requirement:not(:first-child){
+    margin-top: .5rem;
+}
 .requirementHead{
     display: flex;
     justify-content: space-between;
@@ -5,27 +11,19 @@
     padding: 1rem;
     transition: outline .2s ease-in-out;
 }
-.requirementHead:hover{
-    outline: 2px solid var(--text-col);
-}
 .requirementDesc{
-    padding: 0 2rem;
-    overflow: hidden;
+    padding: 0;
     font-size: 0px;
-    overflow: hidden;
     transition: opacity .25s ease-in, font-size 1s ease-in-out;
     opacity: 0;
 }
-.requirementDesc:hover,
-.requirementHead:hover ~ .requirementDesc{
+.requirementDesc:target{
+    padding: 1rem 2rem;
     opacity: 1;
-   font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 .title{
     font-size: 1.75rem;
-}
-.requirementHead:hover > .chevron{
-    transform: rotate(180deg);
 }
 .chevron{
    font-size: 2rem;
@@ -33,4 +31,22 @@
 }
 .textContent{
     margin-top: 1rem;
+}
+@media(hover:hover){
+    .requirementHead:hover > .chevron{
+        transform: rotate(180deg);
+    }
+    .requirement:hover{
+        background-color: var(--second-bg-col);
+        outline: 2px solid var(--text-col);
+    }
+    .requirementHead:hover{
+        background-color: var(--second-bg-col);
+    }
+}
+@media(hover:none){
+    .requirementDesc:target{
+        background-color: var(--second-bg-col);
+        outline: 2px solid var(--text-col);
+    }
 }
