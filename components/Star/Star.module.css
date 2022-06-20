@@ -1,0 +1,8 @@
+.container{
+    display: flex;
+    align-items: center;
+}
+.fillStar, .outlineStar{
+    cursor: pointer;
+    color: var(--gold-bg-col);
+}

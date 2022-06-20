@@ -92,7 +92,11 @@ export default function Achievements({achievements=[]}){
                         </div>
                         <div className={style.achievementDesc}>
                             <div className="achievementHead">
-                                <p className={style.achievementTitle}>{achievement.name}</p>
+                                <span className={style.achievementTitle} title="see achievement">
+                                    <Link href={''}>
+                                            {achievement.name}
+                                    </Link>
+                                </span>
                                 <p className={style.achievementProgress}>{achievement.percent} %</p>
                             </div>
                             <div className={style.achievementBody}>
@@ -103,7 +107,7 @@ export default function Achievements({achievements=[]}){
                     )
                 })}
             </div>
-            <div className={style.achievementLink}>
+            <div className={style.achievementLink} title='show more achievements'>
                 <Link href={'#'} scroll={false}>see more</Link>
             </div>
         </div>

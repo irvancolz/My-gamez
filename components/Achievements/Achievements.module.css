@@ -54,7 +54,7 @@
 .achievementLink{
     padding: 1rem 2rem;
 }
-.achievementLink a:hover{
+.achievementTitle:hover,.achievementLink a:hover{
     text-decoration: underline;
 }
 @media(max-width: 900px){

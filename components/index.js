@@ -7,6 +7,7 @@ import GameStory from "./GameStory";
 import Ratings from "./Ratings";
 import Requirements from "./Requirements";
 import Achievements from "./Achievements";
+import GameList from "./GameList";
 
 export default function Components(){
     return(
@@ -20,6 +21,7 @@ export default function Components(){
             Ratings,
             Requirements,
             Achievements,
+            GameList,
         }
     )
 }

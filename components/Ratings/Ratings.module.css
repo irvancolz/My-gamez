@@ -26,10 +26,6 @@
 .rateBtn p:hover{
     text-decoration: underline;
 }
-.fillStar, .outlineStar{
-    cursor: pointer;
-    color: var(--gold-bg-col);
-}
 .rating{
     display: flex;
     align-items: center;

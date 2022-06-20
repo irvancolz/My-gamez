@@ -5,7 +5,7 @@ import Link from 'next/dist/client/link'
 
 export default function RequirementsContent({content= {}}){
     return(
-        <div className={style.requirement}>
+        <div className={style.requirement} title={`see requirement for ${content.platform.name}`}>
            <a href={`#${content.platform.slug}`}  className={style.requirementHead}>
             <p className={style.title}>{content.platform.name}</p>
             <AiOutlineUp  className={style.chevron}/>

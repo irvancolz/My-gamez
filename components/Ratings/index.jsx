@@ -1,11 +1,11 @@
 import style from "./Ratings.module.css";
-import {AiFillStar, AiOutlineStar} from 'react-icons/ai'
 import { useState } from "react";
 import AddRating from "../AddRating";
+import Star from "../Star";
 
-export default function Ratings(){
+export default function Ratings({rate = []}){
 
-    const [isOpenRate, setIsOpenRate] = useState(true);
+    const [isOpenRate, setIsOpenRate] = useState(false);
     const star = 4.42
     const starRating = star.toFixed(0);
     const ratings =  [
@@ -41,26 +41,14 @@ export default function Ratings(){
         })
         return total
     }
+     const totalRating = getTotalRatings(ratings);
 
-    const starLogo = []
-    for(let i = 0; i < 5; i++){
-        if(i < starRating){
-            starLogo.push(<AiFillStar key={i} className={style.fillStar} />);
-        }else{
-            starLogo.push(<AiOutlineStar key={i} className={style.outlineStar} />);
-        }
-    }
-    
-
-    const totalRating = getTotalRatings(ratings);
     return(
         <section className={`${style.container} container`}>
             <h1>User Ratings</h1>
             <div className={style.ratingHeader}>
                 <div className={style.starContainer}>
-                    <div>
-                        {starLogo}
-                    </div>
+                        <Star limit={star} />
                     <button 
                         type="button"
                         className={`btn ${style.rateBtn}`}
