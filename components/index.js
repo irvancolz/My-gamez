@@ -8,6 +8,7 @@ import Ratings from "./Ratings";
 import Requirements from "./Requirements";
 import Achievements from "./Achievements";
 import GameList from "./GameList";
+import Tags from "./Tags";
 
 export default function Components(){
     return(
@@ -22,6 +23,7 @@ export default function Components(){
             Requirements,
             Achievements,
             GameList,
+            Tags,
         }
     )
 }

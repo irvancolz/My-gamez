@@ -42,7 +42,7 @@ export default function Topnav(){
                 <div title="menu" className={style.menu}>
                     <IoEllipsisVertical />
                 </div>
-                <h1>My gamez</h1>
+                <h1 className={style.title}>My gamez</h1>
             </div>
             <div>
                <Searchbar />

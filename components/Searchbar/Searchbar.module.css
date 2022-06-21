@@ -8,11 +8,11 @@
 }
 .formContainer{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 1rem;
     padding: .5rem 1rem;
     background-color:  rgba(34, 40, 49, 0.5);
     border-radius: 2rem;
+    transition: width .5s ease-in-out;
 }
 .formContainer input{
     font-size: 1rem;
@@ -20,21 +20,19 @@
     outline: none;
     border: none;
     color: var(--main-col);
-    margin-left: 1rem;
-    width: 483px;
-    min-width: 300px;
-    max-width: 1000px;
-}
-.formContainer button{
-    border: none;
-    background-color: rgba(34, 40, 49, 0);
+    width: 500px;
 }
 .formGroup svg{
     color: #fff;
     margin-top: .2rem;
 }
 @media( max-width: 900px){
-
+    .formContainer{
+        width: 100%;
+    }
+    .formContainer input{
+        width: 300px;
+    }
 }
 @media (max-width: 600px){
     .formContainer{

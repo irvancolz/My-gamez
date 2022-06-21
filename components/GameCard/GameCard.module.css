@@ -1,10 +1,11 @@
 .container{
+    width: 20%;
+    max-width: 200px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 200px;
     overflow: hidden;
     aspect-ratio: 9 / 16;
     cursor: pointer;
@@ -13,7 +14,8 @@
     padding: 0 0;
     width: 100%;
     transition: transform .5s ease-out;
-    transform: translateY(85%);
+    background-color: var(--second-bg-col);
+    transform: translateY(81%);
 }
 .cardImage, .cardBody{
     position: absolute;
@@ -37,28 +39,71 @@
     max-width: 100%;
 }
 .cardDesc{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 80%;
+    height: 300px;
     background-color: var(--text-col);
     color: var(--main-bg-col);
     padding: 2rem 1rem 0;
-    transition: bottom .5s ease-out;
+    transition: transform .5s ease-out;
     z-index: 2;
+    transform: translateY(100%);
     border-radius: 1rem 1rem 0 0;
-}
- .container:hover .cardBody{
-    transform: translateY(0);
-    transition: transform .5s ease-out .25s;
-}
-.container:hover .cardImage{
-    filter: brightness(.45);
-}
-.container:hover .cardTitle{
     font-size: 1rem;
-    transition-delay: .2s;
 }
-/*.container:hover .cardDesc{
-    bottom: 0;
-} */
+
+.listText a{
+    margin-left: 1rem;
+    color: var(--main-bg-col);
+}
+@media (max-width : 900px){
+    .container{
+        width: calc(200px - 1rem);
+    }
+    .cardBody{
+        height: 150px;
+    }
+    .cardTitle{
+        font-size: 1.35rem;
+    }
+}
+
+@media(max-width: 600px){
+    .container{
+        width: calc(50% - 1rem);
+    }
+    .cardBody{
+        height: 200px;
+       transform: translateY(85%);
+    }
+    .cardTitle{
+        font-size: 1rem;
+    }
+    .cardDesc li h3{
+        font-size: 1rem;
+    }
+    .listText{
+        font-size: .75rem;
+    }
+}
+@media (hover:hover){
+    .listText a:hover{
+        text-decoration: underline;
+    }
+    .container:hover .cardImage{
+        filter: brightness(.45);
+    }
+    .container:hover .cardTitle{
+        font-size: 1rem;
+        transition-delay: .2s;
+    }
+    .cardTitle:hover{
+        text-decoration: underline;
+    }
+    .container:hover .cardDesc{
+        transform: translateY(-.5rem);
+        transition-delay: .5s;
+    }
+    .container:hover .cardBody{
+        transform: translateY(0);
+        transition: transform .5s ease-out .25s;
+    }
+}

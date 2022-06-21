@@ -6,7 +6,7 @@ export default function SideNav(){
     return(
         <div className={style.container}>
             <div title='notification' id={style.image}>
-                    
+                    <p>sidenav</p>
             </div>
         </div>
     )

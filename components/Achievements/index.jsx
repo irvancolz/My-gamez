@@ -83,7 +83,7 @@ export default function Achievements({achievements=[]}){
             <div className={style.achievementsContainer}>
                 {results.map(achievement =>{
                     return(
-                        <div key={achievement.id} className={style.achievement}>
+                    <div key={achievement.id} className={style.achievement}>
                         <div className={style.achievementPic}>
                             <Image 
                             src={achievement.image}
@@ -91,7 +91,7 @@ export default function Achievements({achievements=[]}){
                             />
                         </div>
                         <div className={style.achievementDesc}>
-                            <div className="achievementHead">
+                            <div className={style.achievementHead}>
                                 <span className={style.achievementTitle} title="see achievement">
                                     <Link href={''}>
                                             {achievement.name}

@@ -1,5 +1,11 @@
-.gamelist{
-    display: grid;
-    grid-template-columns: repeat( auto-fill, minmax(calc(150px - 1rem), 300px));
-    gap: 1rem;
+.gameList{
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+@media (max-width : 600px){
+    .title{
+        margin-top: 2rem;
+    }
 }

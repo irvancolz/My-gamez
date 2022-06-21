@@ -1,0 +1,25 @@
+.container h1{
+    margin: 2rem 0;
+}
+.tagsContainer{
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.tag{
+    background-color: var(--second-bg-col);
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    width: fit-content;
+    transition: background-color .2s ease-in-out;
+    outline: 1px solid var(--text-col);
+    cursor: pointer;
+}
+.tag:hover{
+    background-color: var(--text-col);
+}
+.tag:hover p{
+    color: #000;
+}

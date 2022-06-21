@@ -12,7 +12,8 @@ export default function Home() {
     Ratings,
     Requirements,
     Achievements,
-    GameList} = Components()
+    GameList,
+    Tags} = Components()
 
   function getGames(){
     fetch(`https://rawg.io/api/games/622492/achievements?&key=${key}`)
@@ -36,7 +37,7 @@ export default function Home() {
       </div>
       <GameList name='From The Same Series' />
       <GameList name='From The Same Categories' />
-      <p>tags</p>
+      <Tags />
     </Layout>
   );
 }
