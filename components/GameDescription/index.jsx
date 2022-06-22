@@ -5,50 +5,13 @@ import image3  from '../../public/images/forza-carousel.jpg'
 import GamePicCarousel from '../GamePicCarousel'
 import { FiShoppingCart } from 'react-icons/fi'
 import { IoAdd } from 'react-icons/io5'
+import {FaSteam, FaXbox} from 'react-icons/fa'
+import {AiOutlineDownload} from 'react-icons/ai'
 import Link from 'next/link'
+import GameInfo from '../GameInfo'
 
 
 export default function GameDesc(){
-    const developers =[
-        {
-            "id": 13141,
-            "name": "Playground Games",
-            "slug": "playground-games",
-            "games_count": 10,
-            "image_background": "https://media.rawg.io/media/games/994/99496806493c2f39b9f191923de2a63b.jpg"
-        }
-    ]
-
-    const genres =  [
-        {
-            "id": 4,
-            "name": "Action",
-            "slug": "action",
-            "games_count": 151505,
-            "image_background": "https://media.rawg.io/media/games/b7b/b7b8381707152afc7d91f5d95de70e39.jpg"
-        },
-        {
-            "id": 3,
-            "name": "Adventure",
-            "slug": "adventure",
-            "games_count": 114675,
-            "image_background": "https://media.rawg.io/media/games/951/951572a3dd1e42544bd39a5d5b42d234.jpg"
-        },
-        {
-            "id": 15,
-            "name": "Sports",
-            "slug": "sports",
-            "games_count": 19005,
-            "image_background": "https://media.rawg.io/media/games/1a7/1a77ee44d7e91949aa794597d32c2e28.jpg"
-        },
-        {
-            "id": 1,
-            "name": "Racing",
-            "slug": "racing",
-            "games_count": 21891,
-            "image_background": "https://media.rawg.io/media/screenshots/c02/c02c64324edc2045ea1fc0601cdaaa0c.jpg"
-        }
-    ]
     const platform =  [
         {
             "platform": {
@@ -96,72 +59,154 @@ export default function GameDesc(){
             }
         }
     ]
+    const stores = [
+        {
+            "id": 617116,
+            "url": "",
+            "store": {
+                "id": 2,
+                "name": "Xbox Store",
+                "slug": "xbox-store",
+                "domain": "microsoft.com",
+                "games_count": 4720,
+                "image_background": "https://media.rawg.io/media/games/f46/f466571d536f2e3ea9e815ad17177501.jpg"
+            }
+        },
+        {
+            "id": 617117,
+            "url": "",
+            "store": {
+                "id": 1,
+                "name": "Steam",
+                "slug": "steam",
+                "domain": "store.steampowered.com",
+                "games_count": 64139,
+                "image_background": "https://media.rawg.io/media/games/736/73619bd336c894d6941d926bfd563946.jpg"
+            }
+        }
+    ]
 
-    const player = {
+    const website = "https://forzamotorsport.net/en-US";
+    const esrb_rating = {
         "id": 1,
         "name": "Everyone",
         "slug": "everyone"
     }
+    const developers =[
+        {
+            "id": 13141,
+            "name": "Playground Games",
+            "slug": "playground-games",
+            "games_count": 10,
+            "image_background": "https://media.rawg.io/media/games/994/99496806493c2f39b9f191923de2a63b.jpg"
+        }
+    ]
 
-    const link = "https://forzamotorsport.net/en-US"
+    const genres =  [
+        {
+            "id": 4,
+            "name": "Action",
+            "slug": "action",
+            "games_count": 151505,
+            "image_background": "https://media.rawg.io/media/games/b7b/b7b8381707152afc7d91f5d95de70e39.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Adventure",
+            "slug": "adventure",
+            "games_count": 114675,
+            "image_background": "https://media.rawg.io/media/games/951/951572a3dd1e42544bd39a5d5b42d234.jpg"
+        },
+        {
+            "id": 15,
+            "name": "Sports",
+            "slug": "sports",
+            "games_count": 19005,
+            "image_background": "https://media.rawg.io/media/games/1a7/1a77ee44d7e91949aa794597d32c2e28.jpg"
+        },
+        {
+            "id": 1,
+            "name": "Racing",
+            "slug": "racing",
+            "games_count": 21891,
+            "image_background": "https://media.rawg.io/media/screenshots/c02/c02c64324edc2045ea1fc0601cdaaa0c.jpg"
+        }
+    ]
+    let platforms = []
+    for(let i =0; i < platform.length - 1; i++){
+        platforms.push(platform[i].platform);
+    }
 
+    const listTitle = [
+        {
+        name : 'Genres',
+        link: genres
+        },
+        {
+        name : 'Developers',
+        link: developers
+        },
+        {
+        name : 'Who Can Play',
+        link: esrb_rating
+        },
+        {
+        name : 'Website',
+        link: website
+        },
+        {
+        name : 'Platforms',
+        link: platforms
+        },
+    ]
 
     return (
         <section className={`${style.mainContainer} container`} >
             <div className={style.descContainer}>
                 <div className={style.btnContainer}>
-                    <button type='button' className={`${style.buyBtn} btn`}>
-                        <div className={style.btnContent}>
+                    <div className={style.optionBtnContainer}>
+                        <button className={`${style.buyBtn} btn`}>
                             <FiShoppingCart />
-                            <p>Buy Now</p>
-                        </div>
-                    </button>
-                    <button type='button' className={`${style.addBtn} btn`}>
-                        <div className={style.btnContent}>
+                            <a href='#buyBtn'>
+                                <span className={style.buttonText}>
+                                    Buy Games
+                                </span>
+                            </a>
+                        </button>
+                        <button className={`${style.favouriteBtn} btn`}>
                             <IoAdd />
-                            <p>My favourite</p>
-                        </div>
-                    </button>
-                </div>
-                <div className={style.description}>
-                        <p>Genre : {genres.map(genre =>{
-                            return(
-                                <span 
-                                    className={style.link}
-                                    key={genre.id} 
-                                    title={`see all ${genre.name} games`}>
-                                    <Link href="#">{` ${genre.name}, `}</Link>
-                                </span>
-                            )
-                        })}</p>
-                    <p>Publisher : <span 
-                        className={style.link}
-                        title={`see other games by ${developers[0].name}`}>
-                        <Link href="#" >{developers[0].name}</Link>    
-                        </span>
-                    </p>
-                    <p>Platforms : 
-                        {platform.map(platform =>{
-                            return (
-                                <span
-                                className={style.link}
-                                title={`see all ${platform.platform.name} games`}
-                                key={platform.platform.id}>
-                                    <Link href="#">{` ${platform.platform.name},`}</Link>
-                                </span>
+                            <span className={style.buttonText}>
+                                My Favourite
+                            </span>
+                        </button>
+                    </div>
+                    <div id='buyBtn' className={style.buyBtnContainer}>
+                        {stores.map((store, index)=>{
+                            return(             
+                        <button 
+                            className={`${style.storeBtn} btn`}
+                            style={{
+                                '--animation-order' : `${index + 1}`,
+                            }}
+                            title={`go to ${store.store.name}`}>
+                                {store.store.name === 'Steam' ? <FaSteam />:
+                                store.store.name == 'Xbox Store' ? <FaXbox /> :
+                                <AiOutlineDownload />}
+                            <span className={style.buttonText}>
+                               {store.store.name}
+                            </span>
+                        </button>
                             )
                         })}
-                    </p>
-                    <p>Who can play: 
-                        <span className={style.link}>
-                            {player.name}
-                        </span>
-                    </p>
-                    <p>Oficial website: 
-                        <span className={style.link}>
-                            <Link href="#">{` ${link}`}</Link>
-                        </span>
-                    </p>
+                    </div>
+                
+                </div>
+                <div className={style.description}>
+                     {listTitle.map((item, index)=>{
+                        return(
+                            <GameInfo key={index} info={item.name} content={item.link} />
+                        )
+                     })}
                 </div>
             </div>
             

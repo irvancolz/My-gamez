@@ -10,6 +10,8 @@
   --green-bg-col: #00FFAB;
   --red-bg-col: #FD5D5D;
   --gold-bg-col: #ECCE85;
+  --cyan-hover-bg-col: #09cec7;
+  --green-hover-bg-col: #07bd80;
 }
 html{
   scroll-behavior: smooth;

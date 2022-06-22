@@ -10,55 +10,64 @@
 .btnContainer{
     display: flex;
     gap: 2rem;
-}
-.btnContent{
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-.btnContent p{
-    font-size: 1.5rem;
-}
-.buyBtn{
-    background-color: var(--green-bg-col);
-}
-.buyBtn:hover{
-    background-color: var(--cyan-bg-col);
-}
-.buyBtn svg{
-    transform: scale(2);
-}
-.addBtn{
-    background-color: var(--main-bg-col);
-    border: 1px solid var(--text-col);
-}
-.addBtn:hover{
-    background-color: var(--text-col);
-}
-.addBtn:hover p, .addBtn:hover svg{
-    color: var(--main-bg-col);
-}
-.addBtn svg{
-    transform: scale(2.5);
-}
-.addBtn p, .addBtn svg{
-    color: var(--text-col);
+    flex-wrap: wrap;
 }
 .container > div{
     flex-basis: 50%;
 }
-.description{
-    flex-basis: 90%;
+.optionBtnContainer{
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
+    gap: 1rem;
 }
-.description p:not(:first-child){
-    margin-top: 1rem;
+.optionBtnContainer button{
+    display: flex;
+    gap: .5rem;
 }
-.link:hover{
-    text-decoration: underline;    
+.buyBtnContainer{
+   display: flex;
+   gap: 1rem;
+   flex-wrap: wrap;
+   overflow: hidden;
+}
+.buyBtnContainer:target .storeBtn{
+    transform: translateY(0);
+}
+.buyBtn, .favouriteBtn{
+    transition: background-color .3s ease-in-out;
+}
+.buyBtn{
+    background-color: var(--cyan-bg-col);
+}
+.favouriteBtn{
+    background-color: var(--green-bg-col);
+}
+.buyBtn a{
+    color: var(--main-bg-col);
+}
+.storeBtn{
+    display: flex;
+    gap: .5rem;
+    background-color: var(--second-bg-col);
+    border: 1px solid var(--text-col);
+    color: var(--text-col);
+    transition: transform .5s ease-in-out calc(var(--animation-order) * 150ms) , background-color .3s ease-in-out;
+    transform: translateY(-110%);
+}
+
+@media(hover:hover){
+    .link:hover{
+        text-decoration: underline;    
+    }
+    .storeBtn:hover{
+        background-color: var(--text-col);
+        color: var(--main-bg-col);
+    }
+    .buyBtn:hover{
+        background-color: var(--cyan-hover-bg-col);
+    }
+    .favouriteBtn:hover{
+        background-color: var(--green-hover-bg-col);
+    }
 }
 @media(max-width : 900px){
     .mainContainer{
