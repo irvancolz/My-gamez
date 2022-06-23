@@ -86,7 +86,8 @@ export default function GameDesc(){
         }
     ]
 
-    const website = "https://forzamotorsport.net/en-US";
+    const website =  "https://forzamotorsport.net/en-US";
+
     const esrb_rating = {
         "id": 1,
         "name": "Everyone",
@@ -132,11 +133,21 @@ export default function GameDesc(){
             "image_background": "https://media.rawg.io/media/screenshots/c02/c02c64324edc2045ea1fc0601cdaaa0c.jpg"
         }
     ]
+    const storeLink = {
+    'steam' : 'https://store.steampowered.com/search/?term=',
+    'xbox-store': 'https://www.xbox.com/en-us/Search?q=' ,
+    }
     let platforms = []
     for(let i =0; i < platform.length - 1; i++){
         platforms.push(platform[i].platform);
     }
-
+    const newRatings = [
+        {...esrb_rating}
+    ]
+    const newWebsite = [{
+        'name': website,
+        'slug': website,
+    }]
     const listTitle = [
         {
         name : 'Genres',
@@ -148,11 +159,11 @@ export default function GameDesc(){
         },
         {
         name : 'Who Can Play',
-        link: esrb_rating
+        link: newRatings
         },
         {
         name : 'Website',
-        link: website
+        link: newWebsite
         },
         {
         name : 'Platforms',
@@ -183,7 +194,7 @@ export default function GameDesc(){
                     <div id='buyBtn' className={style.buyBtnContainer}>
                         {stores.map((store, index)=>{
                             return(             
-                        <button 
+                        <button key={index}
                             className={`${style.storeBtn} btn`}
                             style={{
                                 '--animation-order' : `${index + 1}`,
@@ -192,9 +203,13 @@ export default function GameDesc(){
                                 {store.store.name === 'Steam' ? <FaSteam />:
                                 store.store.name == 'Xbox Store' ? <FaXbox /> :
                                 <AiOutlineDownload />}
-                            <span className={style.buttonText}>
-                               {store.store.name}
-                            </span>
+                            <Link href={`${storeLink[store.store.slug]}`}>
+                                <a target='_blank'>
+                                    <span className={style.buttonText}>
+                                        {store.store.name}
+                                    </span>
+                                </a>
+                            </Link>
                         </button>
                             )
                         })}

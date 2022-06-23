@@ -1,0 +1,21 @@
+.container{
+   margin-top: .5rem;
+   display: flex;
+}
+.info{
+    font-weight: 600;
+}
+.linkContainer{
+    margin-left: 1rem;
+    display: flex;
+    gap: .3rem;
+    flex-wrap: wrap;
+}
+.link{
+    cursor: pointer;
+}
+@media(hover:hover){
+    .link:hover{
+        text-decoration: underline;
+    }
+}

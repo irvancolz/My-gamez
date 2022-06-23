@@ -9,6 +9,7 @@
 } 
 .btnContainer{
     display: flex;
+    flex-direction: column;
     gap: 2rem;
     flex-wrap: wrap;
 }
