@@ -22,7 +22,7 @@
     display: flex;
     gap: .5rem;
     justify-content: space-between;
-    background-color: var(--second-bg-col);
+    background-color: var(--dark-blur-bg-col);
     border-radius: .25rem;
     transition: background-color .2s ease-in-out;
     min-height: 100px;

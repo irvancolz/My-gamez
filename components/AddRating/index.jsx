@@ -60,7 +60,7 @@ export default function AddRating(){
                 <form 
                 className={style.AddRatingForm}
                 onSubmit={(e) => handleSubmit(e)}>
-                    <div className={style.formGroup}>
+                    <div className={style.formGroup} title='add rating'>
                         <input 
                         type="range"
                         name="rate" 
@@ -76,7 +76,7 @@ export default function AddRating(){
                         <p>{textReview}</p>
                         </div>
                     </div>
-                    <div className={style.formGroup}>
+                    <div className={style.formGroup} title='write review'>
                         <label className={style.label} htmlFor="review">Add a review</label>
                         <textarea
                             rows="5"
@@ -86,7 +86,7 @@ export default function AddRating(){
                             onChange={(e)=>handleReview(e)}>
                             </textarea>
                     </div>
-                    <div className={style.formGroup}>
+                    <div className={style.formGroup} title='send review'>
                         <button type='submit' className={`${style.submitBtn} btn`}>Rate</button>
                     </div>
                 </form>

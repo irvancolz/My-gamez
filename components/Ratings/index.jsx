@@ -61,7 +61,7 @@ export default function Ratings({rate = []}){
             <div className={style.ratingContainer}>
                 {ratings.map((rating, index) =>{
                     return(
-                    <div className={style.rating} key={index}>
+                    <div className={style.rating} key={index} title={`${rating.title} ${rating.count} reviews`}>
                         <p>{rating.title}</p>
                         <div className={style.ReviewBar}>
                             <div style={{

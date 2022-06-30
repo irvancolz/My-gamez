@@ -9,6 +9,7 @@ import Requirements from "./Requirements";
 import Achievements from "./Achievements";
 import GameList from "./GameList";
 import Tags from "./Tags";
+import BgImageComponent from "./BgImageComponent";
 
 export default function Components(){
     return(
@@ -24,6 +25,7 @@ export default function Components(){
             Achievements,
             GameList,
             Tags,
+            BgImageComponent,
         }
     )
 }

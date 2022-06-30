@@ -37,12 +37,12 @@
   .reviewGames{
     padding: .5rem;
     transition: background-color .5s linear;
-    background-color: var(--second-bg-col);
+    background-color: var(--blur-bg-col);
     font-size: 1rem;
     border: 1px solid var(--text-col);
-    outline: 1px solid var(--text-col);
+    outline: none;
     border-radius: .25rem;
-    width: 300px;
+    width: 100%;
   }
   .reviewGames:focus{
     background-color: var(--text-col);
@@ -52,24 +52,27 @@
     font-size: 1rem;
   }
   .submitBtn{
-    background-color: var(--second-bg-col);
+    background-color: var(--blur-bg-col);
     font-weight: 600;
     color: var(--text-col);
     transition: .5s ease-in-out;
     outline: 2px solid var(--text-col);
   }
-  .submitBtn:hover{
-    outline: none;
-    color: var(--main-bg-col);
-    background-color: var(--text-col);
-  }
+
 .fillStar, .outlineStar, .emoji{
     cursor: pointer;
     color: var(--gold-bg-col);
     font-size: 2rem;
 }
 @media (max-width: 600px) {
-  .formGroup:first-child{
+  .formGroup{
     flex-basis: 100%;
+  }
+}
+@media(hover:hover){
+  .submitBtn:hover{
+    outline: none;
+    color: var(--main-bg-col);
+    background-color: var(--text-col);
   }
 }

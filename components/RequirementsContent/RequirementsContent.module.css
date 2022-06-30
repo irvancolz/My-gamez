@@ -37,16 +37,24 @@
         transform: rotate(180deg);
     }
     .requirement:hover{
-        background-color: var(--second-bg-col);
+        background-color: var(--blur-bg-col);
         outline: 2px solid var(--text-col);
     }
     .requirementHead:hover{
-        background-color: var(--second-bg-col);
+        background-color: var(--blur-bg-col);
     }
 }
 @media(hover:none){
     .requirementDesc:target{
-        background-color: var(--second-bg-col);
+        background-color: var(--blur-bg-col);
         outline: 2px solid var(--text-col);
+    }
+}
+@media(max-width: 600px){
+    .title{
+        font-size: 1rem;
+    }
+    .requirementDesc:target{
+        font-size: 1rem;
     }
 }

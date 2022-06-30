@@ -11,17 +11,21 @@ export default function Home() {
     Requirements,
     Achievements,
     GameList,
-    Tags} = Components()
+    Tags,
+    BgImageComponent} = Components()
   return (
     <Layout home>
       <Topnav />
       <MainBanner />
       <GameDesc />
-      <GameStory />
-      <Ratings />
-      <div className='wrapper'>
-        <Requirements />
-        <Achievements />
+      <div className='second-img-container'>
+        <GameStory />
+        <Ratings />
+        <div className='wrapper'>
+          <Requirements />
+          <Achievements />
+        </div>
+        <BgImageComponent />
       </div>
       <GameList name='From The Same Series' />
       <GameList name='From The Same Categories' />

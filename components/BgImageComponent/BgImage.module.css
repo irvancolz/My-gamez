@@ -1,0 +1,17 @@
+.imgContainer{
+    position: sticky;
+    bottom: 0;
+    z-index: -1;
+}
+.imgContainer span{
+    min-width: 100%;
+}
+.imgContainer img{
+    min-width: 100%;
+    filter: brightness(.65);
+}
+@media(max-width: 600px){
+    .imgContainer{
+        display: none;
+    }
+}

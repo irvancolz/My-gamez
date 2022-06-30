@@ -8,12 +8,12 @@ export default function GameStory({desc = " "}){
     return(
         <section className={`${style.mainConainer} container`}>
             <div>
-                <h1 className="title">Game description</h1>
+                <h1 className="title">Game Prolog</h1>
                 <div>
                     <article 
                     className={style.article}
                     style={{
-                        height: `${expandDesc ? 'fit-content' : '150px'}`
+                        height: `${expandDesc ? '500px' : '150px'}`
                     }}
                     >
                         <p>

@@ -5,11 +5,15 @@
     border: 2px solid var(--text-col);
     border-radius: .25rem;
     padding: 1rem 1rem;
-    background-color: var(--second-bg-col);
+    background-color: var(--dark-blur-bg-col);
     width: fit-content;
 }
 .ratingContainer{
     margin-top: 2rem;
+    background-color: var(--dark-blur-bg-col);
+    padding: 1rem 2rem;
+    border: 1px solid var(--text-col);
+    border-radius: .25rem;
 }
 .starContainer{
     display: flex;
@@ -18,7 +22,7 @@
 }
 .rateBtn{
     padding: .25rem .5rem;
-    background-color: var(--second-bg-col);
+    background-color: var(--dark-blur-bg-col);
 }
 .rateBtn p{
     color: var(--text-col);

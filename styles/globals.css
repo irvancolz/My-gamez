@@ -12,6 +12,8 @@
   --gold-bg-col: #ECCE85;
   --cyan-hover-bg-col: #09cec7;
   --green-hover-bg-col: #07bd80;
+  --blur-bg-col: rgba(255, 255, 255, 0.14);
+  --dark-blur-bg-col: rgba(0, 0, 0, 0.17);
 }
 html{
   scroll-behavior: smooth;
@@ -57,7 +59,8 @@ button{
 .wrapper{
   display: flex;
   gap: 1rem;
-}@media (max-width: 900px){
+}
+@media (max-width: 900px){
   .wrapper{
     flex-direction: column;
   }
@@ -71,6 +74,9 @@ button{
   }
   .btn{
     padding: .5rem 1rem;
+  }
+  .title{
+    font-size: 1.5rem;
   }
   
 }

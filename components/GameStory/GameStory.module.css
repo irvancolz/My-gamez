@@ -4,20 +4,22 @@
 .article{
     margin-top: 2rem;
     overflow: hidden;
-    text-overflow: ellipsis;
-    transition: .5s linear;
+    padding: 1.75rem 2rem;
+    transition: height  .5s ease-in-out;
+    background-color: var(--dark-blur-bg-col);
+    border: 1px solid var(--text-col);
+    border-radius: .25rem;
 }
 .toggleBtn{
     margin-top: 1rem;
     border: 1px solid var(--text-col);
-    background-color: var(--second-bg-col);
+    background-color: var(--blur-bg-col);
     color: var(--text-col);
     font-size: 1rem;
     font-weight: 600;
     transition: .5s ease-in-out;
 }
 .toggleBtn:hover{
-    border: 1px solid var(--second-bg-col);
     background-color: var(--text-col);
     color: var(--main-bg-col);
 }
