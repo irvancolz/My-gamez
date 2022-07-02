@@ -1,10 +1,24 @@
 .requirement{
     border-radius: .5rem;
+    position: relative;
+    min-height: 100px;
+}
+.requirement::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    background-color: var(--blur-bg-col);
+    width: 0;
+    height: 100%;
+    transition: width .5s ease-in-out ;
 }
 .requirement:not(:first-child){
     margin-top: .5rem;
 }
 .requirementHead{
+    position: relative;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,18 +26,20 @@
     transition: outline .2s ease-in-out;
 }
 .requirementDesc{
-    padding: 0;
+    padding: .5rem 1rem;
     font-size: 0px;
-    transition: opacity .25s ease-in, font-size 1s ease-in-out;
     opacity: 0;
+    transition: opacity .25s ease-in, font-size 1s ease-in-out, transform .2s ease-in-out;
 }
 .requirementDesc:target{
-    padding: 1rem 2rem;
     opacity: 1;
     font-size: 1.5rem;
 }
 .title{
     font-size: 1.75rem;
+}
+.logo{
+    margin-right: 1rem;
 }
 .chevron{
    font-size: 2rem;
@@ -39,9 +55,10 @@
     .requirement:hover{
         background-color: var(--blur-bg-col);
         outline: 2px solid var(--text-col);
+        transition-delay: .5s;
     }
-    .requirementHead:hover{
-        background-color: var(--blur-bg-col);
+    .requirement:hover::before{
+        width: 100%;
     }
 }
 @media(hover:none){

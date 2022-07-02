@@ -5,8 +5,10 @@ import image3  from '../../public/images/forza-carousel.jpg'
 import GamePicCarousel from '../GamePicCarousel'
 import { FiShoppingCart } from 'react-icons/fi'
 import { IoAdd } from 'react-icons/io5'
-import {FaSteam, FaXbox} from 'react-icons/fa'
-import {AiOutlineDownload} from 'react-icons/ai'
+import {FaSteam, FaXbox, FaGooglePlay, FaPlaystation} from 'react-icons/fa'
+import {AiOutlineDownload} from 'react-icons/ai';
+import {GrAppleAppStore} from 'react-icons/gr';
+import {SiEpicgames} from 'react-icons/si';
 import Link from 'next/link'
 import GameInfo from '../GameInfo'
 
@@ -82,6 +84,33 @@ export default function GameDesc(){
                 "domain": "store.steampowered.com",
                 "games_count": 64139,
                 "image_background": "https://media.rawg.io/media/games/736/73619bd336c894d6941d926bfd563946.jpg"
+            }
+        },                {
+            "store": {
+                "id": 3,
+                "name": "PlayStation Store",
+                "slug": "playstation-store"
+            }
+        },
+        {
+            "store": {
+                "id": 4,
+                "name": "App Store",
+                "slug": "apple-appstore"
+            }
+        },
+        {
+            "store": {
+                "id": 8,
+                "name": "Google Play",
+                "slug": "google-play"
+            }
+        },
+        {
+            "store": {
+                "id": 11,
+                "name": "Epic Games",
+                "slug": "epic-games"
             }
         }
     ]
@@ -200,8 +229,12 @@ export default function GameDesc(){
                                 '--animation-order' : `${index + 1}`,
                             }}
                             title={`go to ${store.store.name}`}>
-                                {store.store.name === 'Steam' ? <FaSteam />:
-                                store.store.name == 'Xbox Store' ? <FaXbox /> :
+                                {store.store.slug === 'steam' ? <FaSteam />:
+                                store.store.slug === 'xbox-store' ? <FaXbox /> :
+                                store.store.slug === 'playstation-store' ? <FaPlaystation /> :
+                                store.store.slug === 'apple-appstore' ? <GrAppleAppStore /> :
+                                store.store.slug === 'epic-games' ? <SiEpicgames /> :
+                                store.store.slug === 'google-play' ? <FaGooglePlay /> :
                                 <AiOutlineDownload />}
                             <Link href={`${storeLink[store.store.slug]}`}>
                                 <a target='_blank'>

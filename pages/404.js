@@ -1,4 +1,4 @@
-import img from '../public/assets/404logo.svg';
+import img from '../public/assets/logo.svg';
 import Image from 'next/image'
 import style from '../styles/404.module.css'
 import Link from 'next/link'

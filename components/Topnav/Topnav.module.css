@@ -21,8 +21,7 @@
     gap: 1rem;
 }
 .logo{
-    display: block;
-    transform: scale(.8);
+    max-width: 4rem;
 }
 .back{
     display: none;

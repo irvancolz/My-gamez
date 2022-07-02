@@ -1,13 +1,26 @@
-import { useState } from 'react'
-import {AiOutlineDown, AiOutlineUp} from 'react-icons/ai'
+import {AiOutlineUp} from 'react-icons/ai';
+import {FaPlaystation, FaXbox, FaAndroid} from 'react-icons/fa'
+import {SiNintendoswitch} from 'react-icons/si';
+import {AiOutlineDesktop, AiFillApple} from 'react-icons/ai'
 import style from './RequirementsContent.module.css'
-import Link from 'next/dist/client/link'
 
 export default function RequirementsContent({content= {}}){
     return(
         <div className={style.requirement} title={`see requirement for ${content.platform.name}`}>
            <a href={`#${content.platform.slug}`}  className={style.requirementHead}>
-            <p className={style.title}>{content.platform.name}</p>
+            <p className={style.title}>
+            <span className={style.logo}>
+                {
+                content.platform.slug.includes('playstation') ? <FaPlaystation /> :
+                content.platform.slug.includes('xbox') ? <FaXbox /> :
+                content.platform.slug.includes('nintendo') ? <SiNintendoswitch /> :
+                content.platform.slug.includes('android') ? <FaAndroid /> :
+                content.platform.slug.includes('pc') ? <AiOutlineDesktop /> :
+                content.platform.slug.includes('ios') ? <AiFillApple /> :
+                'logo'
+                }
+            </span>
+                {content.platform.name}</p>
             <AiOutlineUp  className={style.chevron}/>
            </a>
            {Object.keys(content.requirements).length !== 0 ? 
