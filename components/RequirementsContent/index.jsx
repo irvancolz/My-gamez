@@ -17,7 +17,7 @@ export default function RequirementsContent({content= {}}){
                 content.platform.slug.includes('android') ? <FaAndroid /> :
                 content.platform.slug.includes('pc') ? <AiOutlineDesktop /> :
                 content.platform.slug.includes('ios') ? <AiFillApple /> :
-                'logo'
+                null
                 }
             </span>
                 {content.platform.name}</p>

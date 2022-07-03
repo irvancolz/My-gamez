@@ -1040,7 +1040,7 @@ export default function GameList({name= '', }){
             <div className={style.gameList}>
                 {content.map(game =>{
                     return(
-                       <GameCard content={game} /> 
+                       <GameCard key={game.id} content={game} /> 
                     )
                 })} 
             </div>
