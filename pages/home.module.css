@@ -1,0 +1,6 @@
+.content{
+    padding: .5rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    gap: .5rem;
+}

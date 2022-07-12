@@ -81,6 +81,16 @@
     text-align: center;
     color: var(--second-bg-col);
 }
+@media(min-width: 1400px){
+    .platformsContainer{
+        display: flex;
+    }
+}
+@media(max-width: 1399px){
+    .platformsContainer{
+        display: none;
+    }
+}
 @media(max-width: 900px){
     .container{
         flex-basis: calc(50% - 1.5rem);

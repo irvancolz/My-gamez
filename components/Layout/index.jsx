@@ -1,9 +1,19 @@
-import styles from './layout.module.css';
+import styles from './Layout.module.css';
+import Topnav from '../Topnav';
+import { ToastContainer } from 'react-toastify';
+import Context from "../../Context";
 
 export default function Layout({ children}) {
+  const {SideNavContext} = Context();
   return (
-    <div className={styles.container}>
-      {children}
-    </div>
+    <SideNavContext>
+      <div className={styles.container}>
+        <ToastContainer />
+        <Topnav />
+        <div className={styles.content}>
+          {children}
+        </div>
+      </div>
+    </SideNavContext>
   );
 }

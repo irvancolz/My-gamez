@@ -1,9 +1,9 @@
 import {useRef, useEffect, useState} from 'react'
 import style from "./Topnav.module.css"
-import SideNav from "../SideNav"
 import Searchbar from "../Searchbar";
 import Image from 'next/image';
 import logo from '../../public/assets/logo.svg';
+import Link from 'next/link';
 import { IoArrowBack,IoEllipsisVertical } from "react-icons/io5";
 
 
@@ -29,9 +29,11 @@ export default function Topnav(){
                 background: `${isScrolled ? 'var(--second-bg-col)' : 'none'}`
             }}>
             <div className={style.logoContainer}>
-                <div className={style.logo}> 
-                    <Image  src={logo}/>        
-                </div>
+                <Link href={'/'}>
+                    <div className={style.logo}> 
+                        <Image  src={logo}/>        
+                    </div>
+                </Link>
                 <div title="back" className={style.back}>                  
                     <IoArrowBack />
                 </div>
@@ -44,7 +46,8 @@ export default function Topnav(){
                <Searchbar />
             </div>
             <div>
-                <SideNav/>
+                {/* notification */}
+                notification
             </div>
         </header>
     )

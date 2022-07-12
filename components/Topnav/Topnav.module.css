@@ -21,6 +21,7 @@
     gap: 1rem;
 }
 .logo{
+    cursor: pointer;
     max-width: 4rem;
 }
 .back{

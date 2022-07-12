@@ -1,11 +1,7 @@
 .container{
-    display: block;
-}
-#image span{
-    transform: scale(.8);
-}
-@media(max-width: 600px){
-    .container{
-        display: none;
-    }
+    position: fixed;
+    background-color: var(--second-bg-col);
+    padding: 1.25rem 1.5rem;
+    border-radius: .35rem;
+    width: 25%;
 }

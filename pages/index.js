@@ -1,35 +1,12 @@
-import Components from '../components';
+import styles from './home.module.css'
+import SideNav from '../components/SideNav'
 
 export default function Home() {
-  const {
-    Layout, 
-    Topnav, 
-    MainBanner,
-    GameDesc,
-    GameStory,
-    Ratings,
-    Requirements,
-    Achievements,
-    GameList,
-    Tags,
-    BgImageComponent} = Components()
-  return (
-    <Layout home>
-      <Topnav />
-      <MainBanner />
-      <GameDesc />
-      <div className='second-img-container'>
-        <GameStory />
-        <Ratings />
-        <div className='wrapper'>
-          <Requirements />
-          <Achievements />
-        </div>
-        <BgImageComponent />
-      </div>
-      <GameList name='From The Same Series' />
-      <GameList name='From The Same Categories' />
-      <Tags />
-    </Layout>
-  );
+  return(
+    <div className={`${styles.content} content`}>
+      <SideNav />
+      <p>content</p>
+      <p>user</p>
+    </div>
+  )
 }

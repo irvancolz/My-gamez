@@ -60,6 +60,9 @@ button{
   display: flex;
   gap: 1rem;
 }
+.content{
+  margin-top: 5rem;
+}
 @media (max-width: 900px){
   .wrapper{
     flex-direction: column;
@@ -78,5 +81,7 @@ button{
   .title{
     font-size: 1.5rem;
   }
-  
+  .content{
+    margin-top: 2rem;
+}
 }

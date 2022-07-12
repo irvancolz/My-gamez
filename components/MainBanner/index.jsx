@@ -1,8 +1,8 @@
 import style from './MainBanner.module.css'
 import Image from 'next/image'
 import forza from '../../public/images/forza.jpg';
-import { useEffect, useState } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
 import {BsBookmark, BsFillBookmarkFill} from 'react-icons/bs'
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -42,7 +42,6 @@ export default function MainBanner(){
 
     return(
     <section className={style.container}>
-      <ToastContainer />
       <div className={style.image}>
           <Image 
           src={forza} />
