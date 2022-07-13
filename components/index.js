@@ -10,6 +10,9 @@ import Achievements from "./Achievements";
 import GameList from "./GameList";
 import Tags from "./Tags";
 import BgImageComponent from "./BgImageComponent";
+import UserCards from "./UserCard";
+import SideNav from "./SideNav";
+import NestedLayout from "./NestedLayout";
 
 export default function Components(){
     return(
@@ -26,6 +29,9 @@ export default function Components(){
             GameList,
             Tags,
             BgImageComponent,
+            UserCards,
+            SideNav,
+            NestedLayout,
         }
     )
 }

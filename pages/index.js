@@ -1,12 +1,11 @@
-import styles from './home.module.css'
-import SideNav from '../components/SideNav'
+import styles from './home.module.css';
+import Components from '../components'
 
 export default function Home() {
+  const {NestedLayout} = Components();
   return(
-    <div className={`${styles.content} content`}>
-      <SideNav />
-      <p>content</p>
-      <p>user</p>
-    </div>
+    <NestedLayout>
+      content
+    </NestedLayout>
   )
 }

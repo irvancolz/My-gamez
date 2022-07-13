@@ -7,7 +7,7 @@
     left: 0;
     top: -1px;
     z-index: 2;
-    padding: 1rem 6rem;
+    padding: 2rem 6rem;
     transition: background .5s linear;
 }
 .logoContainer h1{
@@ -38,6 +38,11 @@
 @media (max-width: 900px){
     .logoContainer h1{
         display: none;
+    }
+}
+@media (max-width: 1400px){
+    .header{
+        padding: 1rem 2rem;
     }
 }
 @media(max-width: 478px){

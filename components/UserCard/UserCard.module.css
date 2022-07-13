@@ -1,0 +1,65 @@
+.container{
+    min-width: 300px;
+    background-color: var(--second-bg-col);
+    padding: 1.75rem 1.5rem;
+    border-radius: .5rem;
+}
+.user{
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.profilePic{
+    position: relative;
+    width: 4rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    background-image :url('../../public/images/user_fallback.webp');
+    background-size: cover;
+    background-position: center;
+}
+.profilePic span{
+    min-height: 100%;
+    aspect-ratio:16 / 9;
+}
+.profileDesc{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 200px;
+}
+.name{
+    flex-basis: 100%;
+    max-width: 200px;
+    white-space: nowrap;
+    font-size: 1.25rem;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: underline;
+}
+.title{
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: .5rem;
+}
+.filter{
+    display: flex;
+    gap: .5rem;
+}
+.list{
+    background-color: var(--blur-bg-col);
+    padding: 1rem .5rem;
+    margin-top: 1rem;
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.btn.active{
+    background-color: var(--text-col);
+    color: var(--main-bg-col);
+}
+@media (hover:hover){
+ 
+}

@@ -2,23 +2,47 @@ import style from './GameCard.module.css';
 import Star from "../Star";
 import Image from 'next/image'
 import Link from 'next/link'
+import {BsBookmark, BsFillBookmarkFill, BsPlay, BsPlayFill} from 'react-icons/bs'
 import {FaPlaystation, FaXbox, FaAndroid} from 'react-icons/fa'
 import {SiNintendoswitch} from 'react-icons/si';
 import {AiOutlineDesktop, AiFillApple} from 'react-icons/ai'
+import { useState } from 'react';
 
 export default function GameCard({content = {}}){
+    const [played, setPlayed] = useState();
+    const [ bookmark, setBookmark] = useState();
     return(
         <div className={style.container}>
-            <div className={style.imageContainer}>
-                <Image 
-                    src={content.background_image}
-                    layout='fill'/>
-            </div>
+            {/* game image */}
+            <Link href={`/Games/${content.slug}`}>
+                <div className={style.imageContainer}>
+                    <Image 
+                        src={content.background_image}
+                        layout='fill'/>
+                </div>
+            </Link>
+            {/* game content */}
             <div className={style.contentContainer}>
                 <div className={style.content}>
-                    <h3 className={style.title}>{content.name}</h3>
-                    <div className={style.starContainer} title={`${content.rating}`}>
-                        <Star limit={content.rating} />
+                    {/* game header */}
+                    <div className={style.header}>
+                        <h3 className={style.title}>
+                            <Link href={`/Games/${content.slug}`}>
+                                {content.name}
+                            </Link>
+                        </h3>
+                        {/* game feature */}
+                        <div className={style.featureContainer}>
+                            <div className={style.feature}>
+                                <BsPlay />
+                            </div>
+                            <div className={style.feature}>
+                                <BsBookmark />
+                            </div>
+                        </div>
+                    </div>
+                     <div className={style.starContainer} title={`${content.rating}`}>
+                            <Star limit={content.rating} />
                     </div>
                     <div className={style.metaContainer}>
                         <div 

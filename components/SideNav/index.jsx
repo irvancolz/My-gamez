@@ -143,6 +143,8 @@ export default function SideNav(){
     return(
         <div className={style.container}>
             <MenuGroup title={'Genre'} menu={genre} />
+            <MenuGroup title={'Genre'} menu={genre} />
+            <MenuGroup title={'Genre'} menu={genre} />
         </div>
     )
 }

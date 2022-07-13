@@ -1,151 +1,75 @@
 .container{
-    position: relative;
-    flex-basis: calc(33% - 1.5rem);
-    aspect-ratio: 16/9;
+    flex-basis: calc(33% - 2rem);
+    max-width: calc(100vw - 2rem);
+    aspect-ratio: 16 / 9;
+    min-height: 200px;
+    border-radius: .35rem;
     display: flex;
+    flex-direction: column;
+    position: relative;
     overflow: hidden;
-    color: var(--main-bg-col);
 }
 .imageContainer{
-    flex-basis: 100%;
-}
-.imageContainer img{
-    transition: filter .5s ease-out;
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    aspect-ratio: 16 / 9;
 }
 .contentContainer{
-    position: relative;
-    background-color: var(--main-bg-col);
-    flex-basis: 70%;
-    height: 100%;
-    border-radius: .5rem 0 0 .5rem;
-}
-.content{
-    padding: 1.5rem 1rem;
-    background-color: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
+    padding: 1rem .5rem;
     width: 100%;
-    height: 100%;
-    border-radius: .5rem 0 0 .5rem;
+    aspect-ratio: 16 / 10;
+    min-height: 100%;
+    border-radius: .5rem .5rem 0 0;
+    transform: translateY(-37%);
+    transition: transform .5s ease-in-out, background-color .5s ease-in-out ;
 }
-.contentContainer, .content{
-    transform: translateX(100%);
-    transition: transform .5s ease-in-out;
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.featureContainer{
+    display: flex;
+    gap: .5rem;
+}
+.feature{
+    cursor: pointer;
+    background-color: var(--dark-blur-bg-col);
+    padding: .25rem;
+    display: grid;
+    place-items: center;
+    border-radius: .25rem;
+}
+.feature svg{
+    transition: transform .2s ease-in-out;
+}
+.feature:active svg{
+    transform: scale(1.2);
 }
 .title{
-    color: var(--main-bg-col);
-    font-size: 1rem;
-}
-.starContainer{
-    margin-top: .5rem;
-    font-size: 1rem;
-}
-.meta{
-    margin-top: .5rem;
-    border: 2px solid ;
-    padding: .2rem;
-    width: fit-content;
-    border-radius: .25rem;
-    font-size: 1rem;
-    font-weight: 600;
-}
-.contentTitle, .link a{
-    font-size: 1rem;
-    color: var(--main-bg-col);
-}
-.link{
-    font-size: 1rem;
-}
-.contentTitle{
-    font-weight: 600;
-    margin-top: .5rem;
-}
-.linkContainer{
-    display: flex;
-    flex-wrap: wrap;
-    gap: .25rem;
-    padding-left: 1rem;
-}
-.platformsContainer{
-    position: absolute;
-    bottom: 1rem;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5rem;
-    justify-content: flex-start;
-    align-items: center;
-}
-.platformsContainer span{
-    text-align: center;
-    color: var(--second-bg-col);
-}
-@media(min-width: 1400px){
-    .platformsContainer{
-        display: flex;
-    }
-}
-@media(max-width: 1399px){
-    .platformsContainer{
-        display: none;
-    }
-}
-@media(max-width: 900px){
-    .container{
-        flex-basis: calc(50% - 1.5rem);
-    }
+    font-size: 1.5rem;
+    position: relative;
+    width: calc(100% - 4rem);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: .25rem;
 }
 @media(max-width: 600px){
-  .container{
-    flex-basis: 100%;
-  }
-  .genres, .esrb, .starContainer, .metaContainer{
-    display: inline-block;
-  }
-  .genres, .esrb{
-    width: calc(50% - 1rem);
-    margin-left: 1rem;
-  }
-  .starContainer{
-    width: fit-content;
-  }
-  .metaContainer{
-    margin-left: 1rem;
-    width: 50%;
-  }
-  .contentContainer{
-    width: 100%;
-    min-width: calc(100vw - 2rem);
-  }
-  .contentContainer, .content{
-    transform: translateY(100%) translateX(0);
-  }
-  .platformsContainer{
-    width: fit-content;
-    right: 1rem;
-  }
-
+    .container{
+        flex-basis: 100%;
+    }
 }
-
 @media(hover:hover){
-    .container:hover .imageContainer img{
-        filter: brightness(.6);
-    }
     .container:hover .contentContainer{
-        transition-delay: .3s;
-        transform: translateX(0);
+        transform: translateY(-100%);
+        background-color: var(--second-bg-col);
+        border-radius: 0;
     }
-    .container:hover .content{
-        transition-delay: .5s;
-        transform: translateX(0);
-    }
-    .link:hover a{
+    .title:hover{
         text-decoration: underline;
     }
-    @media(max-width: 600px){
-        .container:hover .contentContainer, .container:hover .content{
-            transform: translateX(0);
-        }
+    .feature:hover{
+        background-color: var(--blur-bg-col);
     }
 }
