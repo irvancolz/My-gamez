@@ -1,25 +1,30 @@
 import style from './GameCard.module.css';
 import Star from "../Star";
-import Image from 'next/image'
 import Link from 'next/link'
 import {BsBookmark, BsFillBookmarkFill, BsPlay, BsPlayFill} from 'react-icons/bs'
 import {FaPlaystation, FaXbox, FaAndroid} from 'react-icons/fa'
 import {SiNintendoswitch} from 'react-icons/si';
 import {AiOutlineDesktop, AiFillApple} from 'react-icons/ai'
 import { useState } from 'react';
+import GameCardCarousel from '../GameCardCarousel';
 
 export default function GameCard({content = {}}){
-    const [played, setPlayed] = useState();
-    const [ bookmark, setBookmark] = useState();
+    const [played, setPlayed] = useState(false);
+    const [ bookmark, setBookmark] = useState(false);
+
+    function handlePlay(){
+        setPlayed( curr => curr = !curr)
+    }
+
+    function handleBookmark(){
+        setBookmark( curr => curr = !curr)
+    }
+
     return(
         <div className={style.container}>
             {/* game image */}
             <Link href={`/Games/${content.slug}`}>
-                <div className={style.imageContainer}>
-                    <Image 
-                        src={content.background_image}
-                        layout='fill'/>
-                </div>
+                <GameCardCarousel img={content.short_screenshots ? content.short_screenshots : [background_image]} />
             </Link>
             {/* game content */}
             <div className={style.contentContainer}>
@@ -33,17 +38,22 @@ export default function GameCard({content = {}}){
                         </h3>
                         {/* game feature */}
                         <div className={style.featureContainer}>
-                            <div className={style.feature}>
-                                <BsPlay />
+                            <div 
+                            className={style.feature}
+                            onClick ={() => handlePlay()}>
+                                {played ? <BsPlayFill /> : <BsPlay />}
                             </div>
-                            <div className={style.feature}>
-                                <BsBookmark />
+                            <div 
+                            className={style.feature}
+                            onClick={()=> handleBookmark()}>
+                                {bookmark ? <BsFillBookmarkFill /> : <BsBookmark />}
                             </div>
                         </div>
                     </div>
                      <div className={style.starContainer} title={`${content.rating}`}>
                             <Star limit={content.rating} />
                     </div>
+                    {/* additional information about games */}
                     <div className={style.metaContainer}>
                         <div 
                             className={style.meta} 
@@ -56,38 +66,34 @@ export default function GameCard({content = {}}){
                         </div>
                     </div>
                     <div className={style.genres}>
-                        <p className={style.contentTitle}>genres</p>
                         <div className={style.linkContainer}>
                         { content.genres.map(genre =>{
                             return(
-                                <span className={style.link} key={genre.id} title={`${genre.games_count} games`}>
-                                    <Link href={`/categories/${genre.slug}`}>
+                                <p className={style.link} key={genre.id} title={`${genre.games_count} games`}>
+                                    <span>genre :</span>
+                                    <Link href={`/Genres/${genre.slug}`}>
                                         {genre.name}
                                     </Link>
-                                </span>
+                                </p>
                             )
                             })}
                         </div>
                     </div>
-                    <div className={style.esrb}>
-                        <p className={style.contentTitle}>Esrb ratings</p>
-                        <div className={style.linkContainer}>
-                            <p className={style.link}>{content.esrb_rating.name}</p>
-                        </div>
-                    </div>
-                    <div className={style.platformsContainer}>
+                    <div className={`${style.platformsContainer} ${style.linkContainer}`}>
                        {content.parent_platforms.map(content =>{
                         return(
                             <span key={content.platform.id} title={content.platform.name}>
-                            {
-                                content.platform.slug.includes('playstation') ? <FaPlaystation /> :
-                                content.platform.slug.includes('xbox') ? <FaXbox /> :
-                                content.platform.slug.includes('nintendo') ? <SiNintendoswitch /> :
-                                content.platform.slug.includes('android') ? <FaAndroid /> :
-                                content.platform.slug.includes('pc') ? <AiOutlineDesktop /> :
-                                content.platform.slug.includes('ios') ? <AiFillApple /> :
-                                null
-                            }
+                                <Link href={`/platforms/${content.platform.slug}`}>
+                                {
+                                    content.platform.slug.includes('playstation') ? <FaPlaystation /> :
+                                    content.platform.slug.includes('xbox') ? <FaXbox /> :
+                                    content.platform.slug.includes('nintendo') ? <SiNintendoswitch /> :
+                                    content.platform.slug.includes('android') ? <FaAndroid /> :
+                                    content.platform.slug.includes('pc') ? <AiOutlineDesktop /> :
+                                    content.platform.slug.includes('ios') ? <AiFillApple /> :
+                                    null
+                                }
+                                </Link>
                             </span>
                         )
                        })}

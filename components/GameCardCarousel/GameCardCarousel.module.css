@@ -1,0 +1,34 @@
+.container{
+    position: relative;
+    aspect-ratio: 16 / 9;
+}
+.carousel{
+    position: relative;
+    aspect-ratio: 16 / 9;
+}
+.img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity .8s ease-in-out;
+}
+.indicatorContainer{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    gap: .25rem;
+    
+}
+.indicator{
+    padding: .1rem;
+    background-color: var(--blur-bg-col);
+    border-radius: .25rem;
+    transition: background-color .2s ease-in-out;
+    max-width: 20%;
+}

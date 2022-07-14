@@ -219,7 +219,7 @@ export default function Tags({listTags =[]}){
                 {list.map(tag =>{
                     return(
                     <div className={style.tag} key={tag.id} title={`see all ${tag.games_count} ${tag.name} games`}>
-                        <Link href={'#'}>
+                        <Link href={`/Tags/${tag.name}`}>
                             <p className={style.tagLink}>
                                 {tag.name}
                             </p>

@@ -1,4 +1,7 @@
 .container{
+    position: sticky;
+    right: 2rem;
+    top: 0;
     min-width: 300px;
     background-color: var(--second-bg-col);
     padding: 1.75rem 1.5rem;
@@ -49,12 +52,12 @@
 }
 .list{
     background-color: var(--blur-bg-col);
-    padding: 1rem .5rem;
+    padding: 1rem .5rem 3rem;
     margin-top: 1rem;
     border-radius: .25rem;
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 3rem;
 }
 .btn.active{
     background-color: var(--text-col);

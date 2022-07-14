@@ -1,28 +1,29 @@
 .container{
+    position: relative;
     flex-basis: calc(33% - 2rem);
-    max-width: calc(100vw - 2rem);
-    aspect-ratio: 16 / 9;
-    min-height: 200px;
     border-radius: .35rem;
     display: flex;
     flex-direction: column;
-    position: relative;
-    overflow: hidden;
+    margin-bottom: 3rem;
 }
 .imageContainer{
     position: relative;
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     aspect-ratio: 16 / 9;
 }
 .contentContainer{
+    position: absolute;
+    z-index: 2;
     padding: 1rem .5rem;
+    top: 95%;
     width: 100%;
-    aspect-ratio: 16 / 10;
-    min-height: 100%;
+    height: 5rem;
     border-radius: .5rem .5rem 0 0;
-    transform: translateY(-37%);
-    transition: transform .5s ease-in-out, background-color .5s ease-in-out ;
+    background-color: var(--second-bg-col);
+    transition: height .5s ease-in-out, transform .5s ease-in-out;
+    overflow: hidden;
+    box-shadow: .25rem .5rem .5rem var(--dark-blur-bg-col);
 }
 .header{
     display: flex;
@@ -55,16 +56,36 @@
     white-space: nowrap;
     margin-bottom: .25rem;
 }
+.linkContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    border-bottom: 1px solid var(--blur-bg-col);
+}
+.link{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1rem;
+}
+.platformsContainer{
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
 @media(max-width: 600px){
     .container{
         flex-basis: 100%;
     }
 }
 @media(hover:hover){
-    .container:hover .contentContainer{
-        transform: translateY(-100%);
-        background-color: var(--second-bg-col);
-        border-radius: 0;
+    .contentContainer:hover{
+        height: 100%;
+    }
+    .contentContainer:hover .platformsContainer{
+        opacity: 1;
+        transition-delay: .5s;
     }
     .title:hover{
         text-decoration: underline;
