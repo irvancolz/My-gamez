@@ -64,7 +64,7 @@ button{
   gap: 1rem;
 }
 .content{
-  margin-top: 6rem;
+  margin-top: 8rem;
 }
 @media (max-width: 900px){
   .wrapper{
