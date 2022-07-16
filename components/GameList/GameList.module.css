@@ -1,8 +1,23 @@
+.container{
+    margin-top: 4rem;
+}
 .gameList{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
     margin-top: 2rem;
+}
+.swipper{
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1rem;
+}
+.title{
+    color: var(--main-bg-col);
+    background-color: var(--text-col);
+    padding: .5rem 1rem;
+    width: fit-content;
+    border-radius: .25rem;
 }
 @media (max-width : 600px){
     .title{

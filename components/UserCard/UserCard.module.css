@@ -1,11 +1,17 @@
 .container{
     position: sticky;
-    right: 2rem;
-    top: 0;
-    min-width: 300px;
+    top: 8rem;
+    height: fit-content;
+    max-height: 90vh;
+    flex-basis: 20%;
+    min-width: 400px;
     background-color: var(--second-bg-col);
-    padding: 1.75rem 1.5rem;
+    padding: 1.5rem 1rem;
     border-radius: .5rem;
+    overflow: auto;
+}
+.container::-webkit-scrollbar{
+    opacity: 0;
 }
 .user{
     display: flex;
@@ -52,17 +58,49 @@
 }
 .list{
     background-color: var(--blur-bg-col);
-    padding: 1rem .5rem 3rem;
+    padding: 1rem 0;
     margin-top: 1rem;
     border-radius: .25rem;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1rem;
+}
+.list > p{
+    margin: auto;
+}
+.navBtn{
+    width: fit-content;
+    padding: .5rem 1rem;
+    margin: auto;
+    border-radius: .25rem;
+    transition: background-color .5s ease-in-out;
+}   
+.navBtn a{
+    color: var(--main-bg-col);
+    font-weight: 600;
+    font-size: 1rem;
 }
 .btn.active{
     background-color: var(--text-col);
     color: var(--main-bg-col);
 }
 @media (hover:hover){
- 
+  .btn:hover{
+    background-color: var(--blur-bg-col);
+  }
+  .navBtn:hover{
+    background-color: var(--dark-bg-col);
+    outline: 1px solid var(--text-col);
+  }
+  .navBtn:hover a{
+    color: var(--text-col);
+  }
+  .btn.active:hover{
+    color: var(--text-col);
+  }
+}
+@media(max-width: 1400px){
+    .container{
+        top: 6rem;
+    }
 }

@@ -39,11 +39,18 @@ export default function UserCards({content}) {
            })}
         </div>
         <div  className={styles.list}>
-           {content.file[listview].list.map(game =>{
-            return(
-                <GameCard key={game.id} content={game} />
-            )
-           })}
+           {content.file[listview].list.length > 0 ? content.file[listview].list.map(game =>{
+                return(
+                    <GameCard key={game.id} content={game} />
+                )
+           }) :
+           <>
+            <p>Your game is empty.</p>
+            <button className={`nav-btn ${styles.navBtn}`}>
+                <Link href={'/Games'}>Get One</Link>
+            </button>
+           </>
+           }
         </div>
     </div>
   )

@@ -53,9 +53,11 @@ export default function GameCard({content = {}}){
     return(
         <div className={style.container}>
             {/* game image carousel */}
-            <Link href={`/Games/${content.slug}`}>
-                <GameCardCarousel img={content.short_screenshots ? content.short_screenshots : [background_image]} />
-            </Link>
+            <div className={style.imageContainer}>
+                <Link href={`/Games/${content.slug}`}>
+                    <GameCardCarousel img={content.short_screenshots ? content.short_screenshots : [background_image]} />
+                </Link>
+            </div>
 
             {/* game content */}
             <div className={style.contentContainer}>
@@ -90,7 +92,7 @@ export default function GameCard({content = {}}){
                             <div className={style.linkContainer}>
                             { content.genres.map(genre =>{
                                 return(
-                                        <Link href={`/Genres/${genre.slug}`}>
+                                        <Link key={genre.id} href={`/Genres/${genre.slug}`}>
                                             {`${genre.name}, `}
                                         </Link>
                                     )
@@ -123,11 +125,13 @@ export default function GameCard({content = {}}){
                 <div className={style.wrapper}>
                 <div className={style.featureContainer}>
                     <div 
+                        title='add to play'
                         className={style.feature}
                         onClick ={() => handlePlay()}>
                             {played ? <BsPlayFill /> : <BsPlay />}
                     </div>
                     <div 
+                        title='add to bookmark'
                         className={style.feature}
                         onClick={()=> handleBookmark()}>
                             {bookmark ? <BsFillBookmarkFill /> : <BsBookmark />}

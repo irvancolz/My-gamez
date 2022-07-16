@@ -145,6 +145,9 @@ export default function SideNav(){
             <MenuGroup title={'Genre'} menu={genre} />
             <MenuGroup title={'Genre'} menu={genre} />
             <MenuGroup title={'Genre'} menu={genre} />
+            <MenuGroup title={'Genre'} menu={genre} />
+            <MenuGroup title={'Genre'} menu={genre} />
+            <MenuGroup title={'Genre'} menu={genre} />
         </div>
     )
 }

@@ -1,11 +1,22 @@
-.content{
-    padding: .5rem 6rem;
+.container{
+    position: relative;
+    margin: 8rem 2rem 0;
     display: flex;
     justify-content: space-between;
-    gap: .5rem;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.content{
+   max-width: 1000px;
+   flex-grow: 1;
 }
 @media(max-width: 1400px){
-    .content{
-        padding: .5rem 2rem;
+    .container{
+        margin: 6rem 2rem;
+    }
+}
+@media(max-width: 600px){
+    .container{
+        margin: 3rem 1rem;
     }
 }

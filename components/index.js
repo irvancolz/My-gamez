@@ -13,6 +13,7 @@ import BgImageComponent from "./BgImageComponent";
 import UserCards from "./UserCard";
 import SideNav from "./SideNav";
 import NestedLayout from "./NestedLayout";
+import MainCarousel from "./MainCarousel";
 
 export default function Components(){
     return(
@@ -32,6 +33,7 @@ export default function Components(){
             UserCards,
             SideNav,
             NestedLayout,
+            MainCarousel,
         }
     )
 }
