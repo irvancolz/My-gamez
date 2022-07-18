@@ -3,12 +3,17 @@
 }
 .gameList{
     position: relative;
-    width: 100%;
-    overflow: hidden;
     margin-top: 2rem;
 }
+.gameList.swipeable{
+    display: block;
+    overflow-x: auto;
+}
+.gameList::-webkit-scrollbar{
+    opacity: 0;
+}
 .swipper{
-    position: relative;
+    width: 100%;
     display: flex;
     gap: 1rem;
 }
@@ -19,8 +24,40 @@
     width: fit-content;
     border-radius: .25rem;
 }
+.btn{
+    width: fit-content;
+    cursor: pointer;
+}
+.btn.active{
+    background-color: var(--text-col);
+    color : var(--main-bg-col);
+}
+.filterContainer{
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 1rem;
+}
+.filter{
+    display: flex;
+    gap: 1rem;
+}
+@media(hover:hover){
+    .filterContainer a:hover{
+        text-decoration: underline;
+    }
+}
 @media (max-width : 600px){
     .title{
         margin-top: 2rem;
+        font-size: 1.25rem;
+    }
+    .filterContainer{
+        font-size: .75rem;
+    }
+    .swipper{
+        flex-wrap: wrap;
     }
 }

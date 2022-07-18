@@ -2872,11 +2872,159 @@ export default function Home() {
             ]
         }
     ]
+    const gameListFilter =[
+        {
+            "id": 4,
+            "name": "PC",
+            "slug": "pc",
+            "games_count": 461005,
+            "image_background": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg",
+            "image": null,
+            "year_start": null,
+            "year_end": null,
+            "games": [
+                {
+                    "id": 3498,
+                    "slug": "grand-theft-auto-v",
+                    "name": "Grand Theft Auto V",
+                    "added": 17716
+                },
+                {
+                    "id": 3328,
+                    "slug": "the-witcher-3-wild-hunt",
+                    "name": "The Witcher 3: Wild Hunt",
+                    "added": 16492
+                },
+                {
+                    "id": 4200,
+                    "slug": "portal-2",
+                    "name": "Portal 2",
+                    "added": 15505
+                },
+                {
+                    "id": 5286,
+                    "slug": "tomb-raider",
+                    "name": "Tomb Raider (2013)",
+                    "added": 13866
+                },
+                {
+                    "id": 5679,
+                    "slug": "the-elder-scrolls-v-skyrim",
+                    "name": "The Elder Scrolls V: Skyrim",
+                    "added": 13431
+                },
+                {
+                    "id": 4291,
+                    "slug": "counter-strike-global-offensive",
+                    "name": "Counter-Strike: Global Offensive",
+                    "added": 13417
+                }
+            ]
+        },
+        {
+            "id": 187,
+            "name": "PlayStation 5",
+            "slug": "playstation5",
+            "games_count": 627,
+            "image_background": "https://media.rawg.io/media/games/de6/de66bc4c72b45c3bb906c85d0628112d.jpg",
+            "image": null,
+            "year_start": 2020,
+            "year_end": null,
+            "games": [
+                {
+                    "id": 3498,
+                    "slug": "grand-theft-auto-v",
+                    "name": "Grand Theft Auto V",
+                    "added": 17716
+                },
+                {
+                    "id": 3328,
+                    "slug": "the-witcher-3-wild-hunt",
+                    "name": "The Witcher 3: Wild Hunt",
+                    "added": 16492
+                },
+                {
+                    "id": 32,
+                    "slug": "destiny-2",
+                    "name": "Destiny 2",
+                    "added": 11003
+                },
+                {
+                    "id": 58175,
+                    "slug": "god-of-war-2",
+                    "name": "God of War",
+                    "added": 10840
+                },
+                {
+                    "id": 766,
+                    "slug": "warframe",
+                    "name": "Warframe",
+                    "added": 9919
+                },
+                {
+                    "id": 41494,
+                    "slug": "cyberpunk-2077",
+                    "name": "Cyberpunk 2077",
+                    "added": 9484
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Xbox One",
+            "slug": "xbox-one",
+            "games_count": 5337,
+            "image_background": "https://media.rawg.io/media/games/562/562553814dd54e001a541e4ee83a591c.jpg",
+            "image": null,
+            "year_start": null,
+            "year_end": null,
+            "games": [
+                {
+                    "id": 3498,
+                    "slug": "grand-theft-auto-v",
+                    "name": "Grand Theft Auto V",
+                    "added": 17716
+                },
+                {
+                    "id": 3328,
+                    "slug": "the-witcher-3-wild-hunt",
+                    "name": "The Witcher 3: Wild Hunt",
+                    "added": 16492
+                },
+                {
+                    "id": 4200,
+                    "slug": "portal-2",
+                    "name": "Portal 2",
+                    "added": 15505
+                },
+                {
+                    "id": 5286,
+                    "slug": "tomb-raider",
+                    "name": "Tomb Raider (2013)",
+                    "added": 13866
+                },
+                {
+                    "id": 4062,
+                    "slug": "bioshock-infinite",
+                    "name": "BioShock Infinite",
+                    "added": 12887
+                },
+                {
+                    "id": 3439,
+                    "slug": "life-is-strange-episode-1-2",
+                    "name": "Life is Strange",
+                    "added": 12788
+                }
+            ]
+        }
+    ]
   return(
     <NestedLayout>
       <h1 className={styles.mainTitle}>Explore Your Favourite Games in one Place..</h1>
       <MainCarousel content={MainCarouselContent} />
-      <GameList name='For You' content={GameListContent} />
+      <GameList name='For You' content={GameListContent} swipeable />
+      <GameList name='Games Of The Year' content={GameListContent} swipeable/>
+      <GameList name='For Your Device' content={GameListContent} filter filterList={gameListFilter} listLinks='Platforms' />
     </NestedLayout>
   )
 }

@@ -1297,11 +1297,11 @@ export default function Nestedlayout({children}) {
   return (
     <Layout>
         <div className={styles.container}>
-            <SideNav />
+            {/* <SideNav /> */}
             <div className={styles.content}>
                 {children}
             </div>
-            <UserCards content={userContent} />
+            {/* <UserCards content={userContent} /> */}
         </div>
     </Layout>
   )
