@@ -3018,13 +3018,150 @@ export default function Home() {
             ]
         }
     ]
+    const gameTagContent= [
+        {
+            "id": 4,
+            "name": "Action",
+            "slug": "action",
+            "games_count": 155983,
+            "image_background": "https://media.rawg.io/media/games/fc1/fc1307a2774506b5bd65d7e8424664a7.jpg",
+            "games": [
+                {
+                    "id": 3498,
+                    "slug": "grand-theft-auto-v",
+                    "name": "Grand Theft Auto V",
+                    "added": 17719
+                },
+                {
+                    "id": 3328,
+                    "slug": "the-witcher-3-wild-hunt",
+                    "name": "The Witcher 3: Wild Hunt",
+                    "added": 16498
+                },
+                {
+                    "id": 5286,
+                    "slug": "tomb-raider",
+                    "name": "Tomb Raider (2013)",
+                    "added": 13872
+                },
+                {
+                    "id": 5679,
+                    "slug": "the-elder-scrolls-v-skyrim",
+                    "name": "The Elder Scrolls V: Skyrim",
+                    "added": 13432
+                },
+                {
+                    "id": 4291,
+                    "slug": "counter-strike-global-offensive",
+                    "name": "Counter-Strike: Global Offensive",
+                    "added": 13422
+                },
+                {
+                    "id": 12020,
+                    "slug": "left-4-dead-2",
+                    "name": "Left 4 Dead 2",
+                    "added": 13238
+                }
+            ]
+        },
+        {
+            "id": 51,
+            "name": "Indie",
+            "slug": "indie",
+            "games_count": 45935,
+            "image_background": "https://media.rawg.io/media/games/48c/48cb04ca483be865e3a83119c94e6097.jpg",
+            "games": [
+                {
+                    "id": 1030,
+                    "slug": "limbo",
+                    "name": "Limbo",
+                    "added": 11486
+                },
+                {
+                    "id": 3272,
+                    "slug": "rocket-league",
+                    "name": "Rocket League",
+                    "added": 10392
+                },
+                {
+                    "id": 422,
+                    "slug": "terraria",
+                    "name": "Terraria",
+                    "added": 9887
+                },
+                {
+                    "id": 3612,
+                    "slug": "hotline-miami",
+                    "name": "Hotline Miami",
+                    "added": 8696
+                },
+                {
+                    "id": 3790,
+                    "slug": "outlast",
+                    "name": "Outlast",
+                    "added": 8572
+                },
+                {
+                    "id": 9767,
+                    "slug": "hollow-knight",
+                    "name": "Hollow Knight",
+                    "added": 8522
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Adventure",
+            "slug": "adventure",
+            "games_count": 118186,
+            "image_background": "https://media.rawg.io/media/games/e2d/e2d3f396b16dded0f841c17c9799a882.jpg",
+            "games": [
+                {
+                    "id": 3498,
+                    "slug": "grand-theft-auto-v",
+                    "name": "Grand Theft Auto V",
+                    "added": 17719
+                },
+                {
+                    "id": 3328,
+                    "slug": "the-witcher-3-wild-hunt",
+                    "name": "The Witcher 3: Wild Hunt",
+                    "added": 16498
+                },
+                {
+                    "id": 5286,
+                    "slug": "tomb-raider",
+                    "name": "Tomb Raider (2013)",
+                    "added": 13872
+                },
+                {
+                    "id": 13536,
+                    "slug": "portal",
+                    "name": "Portal",
+                    "added": 13142
+                },
+                {
+                    "id": 3439,
+                    "slug": "life-is-strange-episode-1-2",
+                    "name": "Life is Strange",
+                    "added": 12792
+                },
+                {
+                    "id": 28,
+                    "slug": "red-dead-redemption-2",
+                    "name": "Red Dead Redemption 2",
+                    "added": 12407
+                }
+            ]
+        }
+    ];
   return(
     <NestedLayout>
       <h1 className={styles.mainTitle}>Explore Your Favourite Games in one Place..</h1>
       <MainCarousel content={MainCarouselContent} />
       <GameList name='For You' content={GameListContent} swipeable />
       <GameList name='Games Of The Year' content={GameListContent} swipeable/>
-      <GameList name='For Your Device' content={GameListContent} filter filterList={gameListFilter} listLinks='Platforms' />
+      <GameList name='For Your Device' content={gameTagContent} filter filterList={gameListFilter} listLinks='Platforms' />
     </NestedLayout>
   )
 }

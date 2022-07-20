@@ -14,6 +14,7 @@
   --green-hover-bg-col: #07bd80;
   --blur-bg-col: rgba(255, 255, 255, 0.14);
   --dark-blur-bg-col: rgba(0, 0, 0, 0.17);
+  --dark-bg-col: #222831a2;
 }
 html{
   scroll-behavior: smooth;

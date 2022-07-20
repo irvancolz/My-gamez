@@ -14,6 +14,7 @@
     overflow: hidden;
 }
 .contentContainer{
+    position: relative;
     background-color: var(--text-col);
     display: flex;
     align-items: center;
@@ -22,6 +23,19 @@
     border-radius: 0 0 .35rem .35rem;
     flex-grow: 1;
     overflow: hidden;
+}
+/* to make difference layout tags or genres with games */
+.contentContainer.tags{
+    height: 100%;
+    background-color: var(--dark-bg-col);
+    transform: translateY(-100%);
+    display: grid;
+}
+.contentContainer.tags .wrapper{
+    /* position: absolute;
+    top: 0;
+    right: 0; */
+    border: 1px dashed #eee;
 }
 .content{
     flex-grow: 1;
@@ -73,6 +87,15 @@
     padding: .25rem;
     border-radius: .25rem;
     animation: fade .5s ease-in-out;
+}
+.contentContainer.tags .title a,.contentContainer.tags .linkContainer a,.contentContainer.tags .platformsContainer span{
+    color: var(--text-col);
+}
+.contentContainer.tags .featureContainer{
+    color: var(--red-bg-col);
+}
+.contentContainer.tags .wrapper{
+    margin: 0;
 }
 @media(hover:hover){
     .contentContainer:hover .featureContainer{

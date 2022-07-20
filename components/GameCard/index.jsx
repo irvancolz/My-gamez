@@ -6,14 +6,15 @@ import { toast } from 'react-toastify';
 import {BsBookmark, BsFillBookmarkFill, BsPlay, BsPlayFill} from 'react-icons/bs'
 import {FaPlaystation, FaXbox, FaAndroid} from 'react-icons/fa'
 import {SiNintendoswitch} from 'react-icons/si';
-import {AiOutlineDesktop, AiFillApple} from 'react-icons/ai'
+import {AiOutlineHeart,AiFillHeart,AiOutlineDesktop, AiFillApple} from 'react-icons/ai'
 import { useState } from 'react';
 import GameCardCarousel from '../GameCardCarousel';
 
 export default function GameCard({content = {}}){
     const [played, setPlayed] = useState(false);
     const [ bookmark, setBookmark] = useState(false);
-
+    const [ favourite, setFavourite] = useState(false);
+ 
     function handlePlay(){
         setPlayed( curr => curr = !curr);
         showToast(played, 'play list');
@@ -22,6 +23,10 @@ export default function GameCard({content = {}}){
     function handleBookmark(){
         setBookmark( curr => curr = !curr);
         showToast(bookmark, 'bookmark list');
+    }
+    function handleFavourite(){
+        setFavourite( curr => curr = !curr);
+        showToast(favourite, 'favourite');
     }
 
     function showToast(par, msg){
@@ -54,16 +59,22 @@ export default function GameCard({content = {}}){
         <div className={style.container}>
             {/* game image carousel */}
             <div className={style.imageContainer}>
+                {content.games ? 
+                    <Image src={content.image_background} layout='fill'></Image>
+                :                
                 <Link href={`/Games/${content.slug}`}>
-                    <GameCardCarousel img={content.short_screenshots ? content.short_screenshots : [background_image]} />
+                    <GameCardCarousel img={content.short_screenshots} />
                 </Link>
+            }
             </div>
 
             {/* game content */}
-            <div className={style.contentContainer}>
+            <div className={`${style.contentContainer} ${content.games ? style.tags : null}`}>
+                {!content.games && 
                 <div className={style.gameProfilePic}>
                     <Image src={content.background_image} layout='fill'></Image>
                 </div>
+                }
 
                 <div className={style.content}>
                     {/* game header */}
@@ -74,11 +85,14 @@ export default function GameCard({content = {}}){
                             </Link>
                         </h3>
                     </div>
-                     <div className={style.starContainer} title={`${content.rating}`}>
+                    {!content.games &&
+                    <div className={style.starContainer} title={`${content.rating}`}>
                              <Star limit={content.rating} />
                     </div>
+                    }
                     {/* additional information about games */}
                     <div className={style.body}>
+                        {!content.games_count &&
                         <div 
                             className={style.meta} 
                             title='metacritic score'
@@ -88,17 +102,28 @@ export default function GameCard({content = {}}){
                             }}>
                             {content.metacritic}
                         </div>
+                        }
                         <div className={style.genres}>
                             <div className={style.linkContainer}>
-                            { content.genres.map(genre =>{
+                            { content.games ? 
+                             content.games.map(game =>{
+                                return(
+                                        <Link key={game.id} href={`/Games/${game.slug}`}>
+                                            {`${game.name}, `}
+                                        </Link>
+                                    )
+                                }):
+                            content.genres.map(genre =>{
                                 return(
                                         <Link key={genre.id} href={`/Genres/${genre.slug}`}>
                                             {`${genre.name}, `}
                                         </Link>
                                     )
-                                })}
+                                })
+                                }
                             </div>
                         </div>
+                        {!content.games_count &&
                             <div className={`${style.platformsContainer} ${style.linkContainer}`}>
                             {content.parent_platforms.map(content =>{
                                 return(
@@ -118,25 +143,37 @@ export default function GameCard({content = {}}){
                                 )
                             })}
                         </div>
+                        }
                     </div>
                 </div>
 
                      {/* game feature */}
                 <div className={style.wrapper}>
-                <div className={style.featureContainer}>
-                    <div 
-                        title='add to play'
-                        className={style.feature}
-                        onClick ={() => handlePlay()}>
-                            {played ? <BsPlayFill /> : <BsPlay />}
+                    <div className={style.featureContainer}>
+                        {!content.games ?
+                        <>
+                            <div 
+                                title='play'
+                                className={style.feature}
+                                onClick ={() => handlePlay()}>
+                                    {played ? <BsPlayFill /> : <BsPlay />}
+                            </div>
+                            <div 
+                                title='bookmark'
+                                className={style.feature}
+                                onClick={()=> handleBookmark()}>
+                                    {bookmark ? <BsFillBookmarkFill /> : <BsBookmark />}
+                            </div>
+                        </>
+                        :
+                            <div
+                            title='favourite'
+                            className={style.feature}
+                            onClick={()=> handleFavourite()}>
+                                {favourite ? <AiFillHeart /> : <AiOutlineHeart />}
+                            </div>
+                        }
                     </div>
-                    <div 
-                        title='add to bookmark'
-                        className={style.feature}
-                        onClick={()=> handleBookmark()}>
-                            {bookmark ? <BsFillBookmarkFill /> : <BsBookmark />}
-                    </div>
-                </div>
                 </div>
             </div>
         </div>
