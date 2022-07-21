@@ -4,6 +4,7 @@
 .gameList{
     position: relative;
     margin-top: 2rem;
+    scroll-behavior: smooth;
 }
 .gameList.swipeable{
     display: block;
@@ -12,10 +13,30 @@
 .gameList::-webkit-scrollbar{
     opacity: 0;
 }
+.header, .navContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.nav{
+    width: 3rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
 .swipper{
     width: 100%;
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+}
+.swipper.swipeable{
+    flex-wrap: nowrap;
 }
 .title{
     color: var(--main-bg-col);
@@ -47,6 +68,9 @@
 @media(hover:hover){
     .filterContainer a:hover{
         text-decoration: underline;
+    }
+    .nav:hover{
+        background-color: var(--blur-bg-col);
     }
 }
 @media (max-width : 600px){

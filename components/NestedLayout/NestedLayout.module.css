@@ -2,20 +2,21 @@
     position: relative;
     margin: 8rem 2rem 0;
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: center;
     align-items: flex-start;
     gap: 1rem;
 }
 .content{
-   max-width: 1000px;
    flex-grow: 1;
+   flex-basis: 80%;
+   overflow: hidden;
 }
 @media(max-width: 1400px){
     .container{
         margin: 6rem 2rem;
     }
     .content{
-        max-width: 100%;
+        max-width: 80%;
     }
 }
 @media(max-width: 600px){

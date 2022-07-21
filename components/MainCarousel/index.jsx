@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import style from './MainCarousel.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import {IoChevronBack, IoChevronForward} from 'react-icons/io5'
+import {IoChevronBack, IoChevronForward} from 'react-icons/io5';
 
 export default function MainCarousel({content =[]}) {
     const [counter, setCounter] = useState(0);

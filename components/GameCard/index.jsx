@@ -4,13 +4,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { toast } from 'react-toastify';
 import {BsBookmark, BsFillBookmarkFill, BsPlay, BsPlayFill} from 'react-icons/bs'
-import {FaPlaystation, FaXbox, FaAndroid} from 'react-icons/fa'
-import {SiNintendoswitch} from 'react-icons/si';
-import {AiOutlineHeart,AiFillHeart,AiOutlineDesktop, AiFillApple} from 'react-icons/ai'
+import {AiOutlineHeart,AiFillHeart} from 'react-icons/ai'
 import { useState } from 'react';
 import GameCardCarousel from '../GameCardCarousel';
+import PlatformLogo from '../PlatformLogo';
 
-export default function GameCard({content = {}}){
+export default function GameCard({content = {}, links=''}){
     const [played, setPlayed] = useState(false);
     const [ bookmark, setBookmark] = useState(false);
     const [ favourite, setFavourite] = useState(false);
@@ -56,15 +55,13 @@ export default function GameCard({content = {}}){
       }
 
     return(
-        <div className={style.container}>
+        <div className={`${style.container} ${content.games ? style.tags : null}`}>
             {/* game image carousel */}
             <div className={style.imageContainer}>
                 {content.games ? 
                     <Image src={content.image_background} layout='fill'></Image>
                 :                
-                <Link href={`/Games/${content.slug}`}>
                     <GameCardCarousel img={content.short_screenshots} />
-                </Link>
             }
             </div>
 
@@ -78,9 +75,9 @@ export default function GameCard({content = {}}){
 
                 <div className={style.content}>
                     {/* game header */}
-                    <div className={style.header}>
+                    <div className={style.header} data-name={content.name}>
                         <h3 className={style.title}>
-                            <Link href={`/Games/${content.slug}`}>
+                            <Link href={`/${content.games ? links : 'Games'}/${content.slug}`}>
                                 {content.name}
                             </Link>
                         </h3>
@@ -108,16 +105,21 @@ export default function GameCard({content = {}}){
                             { content.games ? 
                              content.games.map(game =>{
                                 return(
-                                        <Link key={game.id} href={`/Games/${game.slug}`}>
+                                    <span data-count ={game.added} title={game.name}>
+                                        <Link key={game.id} href={`/Games/${game.slug}`} >
                                             {`${game.name}, `}
                                         </Link>
+                                    </span>
                                     )
-                                }):
+                                })
+                                :
                             content.genres.map(genre =>{
                                 return(
-                                        <Link key={genre.id} href={`/Genres/${genre.slug}`}>
+                                    <span title={genre.name}>
+                                        <Link key={genre.id} href={`/Genres/${genre.slug}`} title={genre.name}>
                                             {`${genre.name}, `}
                                         </Link>
+                                    </span>
                                     )
                                 })
                                 }
@@ -129,15 +131,7 @@ export default function GameCard({content = {}}){
                                 return(
                                     <span key={content.platform.id} title={content.platform.name}>
                                         <Link href={`/platforms/${content.platform.slug}`}>
-                                        {
-                                            content.platform.slug.includes('playstation') ? <FaPlaystation /> :
-                                            content.platform.slug.includes('xbox') ? <FaXbox /> :
-                                            content.platform.slug.includes('nintendo') ? <SiNintendoswitch /> :
-                                            content.platform.slug.includes('android') ? <FaAndroid /> :
-                                            content.platform.slug.includes('pc') ? <AiOutlineDesktop /> :
-                                            content.platform.slug.includes('ios') ? <AiFillApple /> :
-                                            null
-                                        }
+                                            <PlatformLogo logo={content.platform.slug} />
                                         </Link>
                                     </span>
                                 )
@@ -148,9 +142,9 @@ export default function GameCard({content = {}}){
                 </div>
 
                      {/* game feature */}
+                {!content.games &&
                 <div className={style.wrapper}>
                     <div className={style.featureContainer}>
-                        {!content.games ?
                         <>
                             <div 
                                 title='play'
@@ -165,16 +159,9 @@ export default function GameCard({content = {}}){
                                     {bookmark ? <BsFillBookmarkFill /> : <BsBookmark />}
                             </div>
                         </>
-                        :
-                            <div
-                            title='favourite'
-                            className={style.feature}
-                            onClick={()=> handleFavourite()}>
-                                {favourite ? <AiFillHeart /> : <AiOutlineHeart />}
-                            </div>
-                        }
                     </div>
                 </div>
+                }
             </div>
         </div>
     )

@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react"
 import GameCard from "../GameCard"
-import style from "./GameList.module.css"
+import style from "./GameList.module.css";
+import {IoChevronBack, IoChevronForward} from 'react-icons/io5';
 
-export default function GameList({name= '', content = [], filter = false, filterList=[], listLinks=''}, swipeable = false){
+export default function GameList({name= '', content = [], filter = false, filterList=[], listLinks='', swipeable = false}){
     const swiperRef = useRef();
     const [start, setStart] = useState(0);
     const [swipe, setSwipe] = useState(10);
@@ -23,9 +24,16 @@ export default function GameList({name= '', content = [], filter = false, filter
         setDrag(curr => curr = false);
         setSwipe(start - e.pageX);
     }
+    function scrollLeft(){
+        swiperRef.current.scrollLeft = swiperRef.current.scrollLeft + 320;
+    }
+    function scrollRight(){
+        swiperRef.current.scrollLeft = swiperRef.current.scrollLeft - 320;
+    }
 
     useEffect(()=>{
         // update gamelist on every filter changed
+       
        
     },[filterVal])
 
@@ -37,7 +45,23 @@ export default function GameList({name= '', content = [], filter = false, filter
     }, [swipe])
     return(
         <section className={style.container}>
-            <h1 className={`${style.title} title`}>{name}</h1>
+            <div className={style.header}>
+                <h1 className={`${style.title} title`}>{name}</h1>
+                {swipeable &&
+                    <div className={style.navContainer}>
+                        <div 
+                            className={style.nav}
+                            onClick={()=> scrollRight()}>
+                            <IoChevronBack />
+                        </div>
+                        <div 
+                        className={style.nav}
+                        onClick={()=> scrollLeft()}>
+                            <IoChevronForward />
+                        </div>
+                    </div>
+                }
+            </div>
             {filter && 
                 <div className={style.filterContainer}>
                     <p className={`btn ${style.btn} ${style.active} `}>Filter</p>
@@ -60,7 +84,7 @@ export default function GameList({name= '', content = [], filter = false, filter
                 className={`${style.gameList} ${swipeable ? style.swipeable : null}`}
                 ref={swiperRef}>
                     <div 
-                        className={style.swipper}
+                        className={`${style.swipper} ${swipeable ? style.swipeable : null}`}
                         onMouseMove={(e)=> handleDrag(e)}
                         onMouseDown={ (e)=> handleHold(e)}
                         onMouseUp={(e) => handleRelase(e)}
@@ -69,7 +93,7 @@ export default function GameList({name= '', content = [], filter = false, filter
                         onTouchEnd={(e) => handleRelase(e)}>
                         {content.map(game =>{
                             return(
-                            <GameCard key={game.id} content={game} /> 
+                            <GameCard key={game.id} content={game} links={listLinks}/> 
                             )
                         })} 
                     </div>
