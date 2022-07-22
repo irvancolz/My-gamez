@@ -70,7 +70,6 @@
     background-color: var(--dark-bg-col);
     padding: .5rem  1rem;
     border-radius: .25rem;
-    border: 1px solid var(--text-col);
 }
 .contentContainer.tags .linkContainer span{
     min-width: 100%;

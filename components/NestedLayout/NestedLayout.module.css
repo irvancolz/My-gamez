@@ -1,6 +1,6 @@
 .container{
+    margin: 8rem 4rem;
     position: relative;
-    margin: 8rem 2rem 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -13,7 +13,7 @@
 }
 @media(max-width: 1400px){
     .container{
-        margin: 6rem 2rem;
+        margin: 7rem 4rem;
     }
     .content{
         max-width: 80%;

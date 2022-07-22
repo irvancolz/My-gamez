@@ -1,0 +1,23 @@
+.container{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+.contentContainer{
+    width: 85vw;
+}
+.searchbar{
+    display: none;
+}
+@media(max-width: 600px){
+    .container{
+        margin-top: 3rem;
+        padding: 0 1rem;
+    }
+    .contentContainer{
+        width: 100%;
+    }
+    .searchbar{
+        display: block;
+    }
+}

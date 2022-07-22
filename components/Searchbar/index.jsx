@@ -4,10 +4,11 @@ import {FiSearch, FiX} from 'react-icons/fi'
 
 
 export default function Searchbar(){
-    const inputRef = useRef(null);
+    const inputRef = useRef();
     
     async function handleSubmit(event){
         event.preventDefault();
+        console.log(inputRef.current.value)
         // call api
         inputRef.current.value = ""
     }
@@ -15,28 +16,21 @@ export default function Searchbar(){
         inputRef.current.value = ""
     }
     return(
-        <div className={style.container}>
-        <form onSubmit={handleSubmit}>
-            <div className={style.formContainer} title="search games">
-                <div className={style.formGroup}>
-                    <FiSearch />
-                </div>
-                <div >
-                    <input 
-                        ref={inputRef}
-                        type="text"
-                        placeholder="Search games" />
-                </div>
-                <div className={style.formGroup}>
-                <div 
-                    title="clear search"
-                    onClick={clearSearch}
-                    >
-                    <FiX />
-                </div>
-                </div>
+        <form onSubmit={handleSubmit} className={style.container}>
+            <div className={`${style.formGroup} ${style.header}`}
+            onClick={()=> handleSubmit()}>
+                <FiSearch />
+            </div>
+            <div className={`${style.formGroup} ${style.body}`}>
+                <input 
+                placeholder="search"
+                type='text' 
+                ref={inputRef}/>
+            </div>
+            <div className={`${style.formGroup} ${style.clear}`}
+            onClick={()=> clearSearch()}>
+                <FiX />
             </div>
         </form>
-        </div>
     )
 }

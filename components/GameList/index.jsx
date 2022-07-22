@@ -91,11 +91,14 @@ export default function GameList({name= '', content = [], filter = false, filter
                         onTouchStart={(e) => handleHold(e)}
                         onTouchMove={(e)=> handleDrag(e)}
                         onTouchEnd={(e) => handleRelase(e)}>
-                        {content.map(game =>{
+                        {content.length > 0 ? content.map(game =>{
                             return(
                             <GameCard key={game.id} content={game} links={listLinks}/> 
                             )
-                        })} 
+                        }) 
+                    :
+                        <p>No games :p</p>
+                    } 
                     </div>
             </div>
         </section>

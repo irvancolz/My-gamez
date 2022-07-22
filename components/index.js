@@ -14,6 +14,7 @@ import UserCards from "./UserCard";
 import SideNav from "./SideNav";
 import NestedLayout from "./NestedLayout";
 import MainCarousel from "./MainCarousel";
+import Searchbar from "./Searchbar";
 
 export default function Components(){
     return(
@@ -25,6 +26,7 @@ export default function Components(){
             GamePicCarousel,
             GameStory,
             Ratings,
+            Searchbar,
             Requirements,
             Achievements,
             GameList,

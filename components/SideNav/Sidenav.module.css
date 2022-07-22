@@ -1,11 +1,10 @@
 .container{
     position: sticky;
-    top: 8rem;
+    top: 7rem;
     height: 85vh;
     background-color: var(--second-bg-col);
     padding: 1.75rem 1.5rem;
     border-radius: .5rem;
-    max-width: 17rem;
     min-width: 15rem;
     flex-basis: 20%;
     display: flex;

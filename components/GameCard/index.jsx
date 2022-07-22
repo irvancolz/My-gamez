@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { toast } from 'react-toastify';
 import {BsBookmark, BsFillBookmarkFill, BsPlay, BsPlayFill} from 'react-icons/bs'
-import {AiOutlineHeart,AiFillHeart} from 'react-icons/ai'
 import { useState } from 'react';
 import GameCardCarousel from '../GameCardCarousel';
 import PlatformLogo from '../PlatformLogo';
@@ -105,8 +104,8 @@ export default function GameCard({content = {}, links=''}){
                             { content.games ? 
                              content.games.map(game =>{
                                 return(
-                                    <span data-count ={game.added} title={game.name}>
-                                        <Link key={game.id} href={`/Games/${game.slug}`} >
+                                    <span key={game.id} data-count ={game.added} title={game.name}>
+                                        <Link  href={`/Games/${game.slug}`} >
                                             {`${game.name}, `}
                                         </Link>
                                     </span>
@@ -115,8 +114,8 @@ export default function GameCard({content = {}, links=''}){
                                 :
                             content.genres.map(genre =>{
                                 return(
-                                    <span title={genre.name}>
-                                        <Link key={genre.id} href={`/Genres/${genre.slug}`} title={genre.name}>
+                                    <span key={genre.id} title={genre.name}>
+                                        <Link href={`/Genres/${genre.slug}`} title={genre.name}>
                                             {`${genre.name}, `}
                                         </Link>
                                     </span>

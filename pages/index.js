@@ -3298,7 +3298,7 @@ export default function Home() {
       <GameList name='Games Of The Year' content={GameListContent} swipeable/>
       <GameList name='For Your Device' content={gameTagContent} filter filterList={gameListFilter} listLinks='Platforms' />
       <GameList name='Popular Genre' content={gameTagContent} filter filterList={gameListFilter} listLinks='Genres' />
-      <GameList name='Find By Tags' content={gameTagContent} filter filterList={gameListFilter} listLinks='Tags' />
+      <GameList name='Find By Tags'  filter filterList={gameListFilter} listLinks='Tags' />
       <GameList name='All Games' content={gameTagContent} filter filterList={gameListFilter} listLinks='Games' />
     </NestedLayout>
   )

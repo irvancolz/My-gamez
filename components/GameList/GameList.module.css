@@ -74,6 +74,9 @@
     }
 }
 @media (max-width : 600px){
+    .container{
+        margin-top: 0;
+    }
     .title{
         margin-top: 2rem;
         font-size: 1.25rem;

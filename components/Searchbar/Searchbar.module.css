@@ -1,41 +1,43 @@
 .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.searchHide{
-    display: none;
-}
-.formContainer{
+    position: relative;
     display: flex;
     gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
     padding: .5rem 1rem;
-    background-color:  rgba(34, 40, 49, 0.5);
-    border-radius: 2rem;
-    transition: width .5s ease-in-out;
+    background-color: var(--dark-blur-bg-col);
+    border-radius: .5rem;
+    overflow: hidden;
 }
-.formContainer input{
-    font-size: 1rem;
-    background-color: rgba(34, 40, 49, 0);
+.body{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+.body input{
+    padding: .5rem 3rem;
+    height: 100%;
+    width: 100%;
+    background-color: var(--dark-blur-bg-col);
     outline: none;
     border: none;
-    color: var(--main-col);
-    width: 500px;
+    font-size: 1.25rem;
+    color: var(--text-col);
+    transition: background-color .2s ease-in-out;
 }
-.formGroup svg{
-    color: #fff;
-    margin-top: .2rem;
+.body input:focus{
+    background-color: var(--blur-bg-col);
 }
-@media( max-width: 900px){
-    .formContainer{
-        width: 100%;
+@media(max-width: 600px){
+    .body{
+        flex-grow: 1;
     }
-    .formContainer input{
-        width: 300px;
-    }
-}
-@media (max-width: 600px){
-    .formContainer{
-        display: none;
+    .body input{
+        font-size: 1rem;
     }
 }

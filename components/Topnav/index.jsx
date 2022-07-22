@@ -24,30 +24,34 @@ export default function Topnav(){
     return(
         <header 
             ref={navRef} 
-            className={`${style.header} scroll container`}
+            className={`${style.header}`}
             style={{
                 background: `${isScrolled ? 'var(--second-bg-col)' : 'none'}`
             }}>
-            <div className={style.logoContainer}>
-                <Link href={'/'}>
-                    <div className={style.logo}> 
-                        <Image  src={logo}/>        
+            <div className={style.container}>
+                <div className={style.logoContainer}>
+                    <Link href={'/'}>
+                        <div className={style.logo}> 
+                            <Image  src={logo}/>        
+                        </div>
+                    </Link>
+                    <div title="back" className={style.back}>                  
+                        <IoArrowBack />
+                    </div>
+                    <div title="menu" className={style.menu}>
+                        <IoEllipsisVertical />
+                    </div>
+                    <h1 className={style.title}>My gamez</h1>
+                </div>
+                <Link href='/Search'>
+                    <div className={style.searchBar}>
+                        <Searchbar />
                     </div>
                 </Link>
-                <div title="back" className={style.back}>                  
-                    <IoArrowBack />
+                <div>
+                    {/* notification */}
+                    notification
                 </div>
-                <div title="menu" className={style.menu}>
-                    <IoEllipsisVertical />
-                </div>
-                <h1 className={style.title}>My gamez</h1>
-            </div>
-            <div>
-               <Searchbar />
-            </div>
-            <div>
-                {/* notification */}
-                notification
             </div>
         </header>
     )
