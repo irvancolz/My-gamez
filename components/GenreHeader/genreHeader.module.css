@@ -1,0 +1,41 @@
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: .75rem;
+    overflow: hidden;
+}
+.title{
+    font-size: 3rem;
+    margin-bottom: .5rem;
+}
+.count{
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+}
+.btn{
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    background-color: var(--blur-bg-col);
+    color: var(--text-col);
+    border: 2px solid var(--text-col);
+    border-radius: .25rem;
+    margin-bottom: 3rem;
+    transition: .3s ease-in-out;
+}
+.txt:target{
+    border: 1px dashed #eee;
+}
+.btn.active{
+    background-color: var(--text-col);
+    color: var(--main-bg-col);
+}
+.img span{
+    z-index: -1;
+    filter: blur(3px);
+}

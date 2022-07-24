@@ -85,7 +85,8 @@ export default function GameDesc(){
                 "games_count": 64139,
                 "image_background": "https://media.rawg.io/media/games/736/73619bd336c894d6941d926bfd563946.jpg"
             }
-        },                {
+        },
+        {
             "store": {
                 "id": 3,
                 "name": "PlayStation Store",

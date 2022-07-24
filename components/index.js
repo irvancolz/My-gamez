@@ -15,6 +15,7 @@ import SideNav from "./SideNav";
 import NestedLayout from "./NestedLayout";
 import MainCarousel from "./MainCarousel";
 import Searchbar from "./Searchbar";
+import GenreHeader from "./GenreHeader";
 
 export default function Components(){
     return(
@@ -36,6 +37,7 @@ export default function Components(){
             SideNav,
             NestedLayout,
             MainCarousel,
+            GenreHeader
         }
     )
 }
