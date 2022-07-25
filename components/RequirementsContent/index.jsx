@@ -1,6 +1,7 @@
 import {AiOutlineUp} from 'react-icons/ai';
 import style from './RequirementsContent.module.css'
 import PlatformLogo from '../PlatformLogo';
+import Link from 'next/link';
 
 export default function RequirementsContent({content= {}}){
     return(

@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useRef} from 'react';
 import style from './genreHeader.module.css';
 import parse from 'html-react-parser';
-import Image from 'next/image';
-import Link from 'next/link';
-import {AiOutlineUp} from 'react-icons/ai'
+
 
 export default function GenreHeader({content={}}) {
-    const [follow,setFollow] = useState(false)
+    const heightRef = useRef();
+    const [follow,setFollow] = useState(false);
+    const [expand,setExpand] = useState(false);
     const GameListContent = [
         {
             "id": 58753,
@@ -1040,7 +1040,15 @@ export default function GenreHeader({content={}}) {
         }
     ]
   return (
-    <section className={style.container}>
+    <section 
+        className={style.container}>
+        <div className={style.bgImg}
+        style={
+            {
+                background: `url(${content.image_background})`,
+                backgroundSize: 'cover',
+            }
+            }></div>
         <h1 className={style.title}>{content.name}</h1>
         <p className={style.count}>{content.games_count} games</p>
         <button 
@@ -1049,15 +1057,22 @@ export default function GenreHeader({content={}}) {
             onClick={()=> setFollow(curr => curr = !curr)}>
                 {follow ? 'Followed' : 'Follow'}
         </button>
-        <article className={style.txt} id='#txt'>
-            {parse(content.description)}
-            <Link href={'#txt'}>
-                <AiOutlineUp />
-            </Link>
+        <article 
+            className={style.txt}>
+            <div
+                className={style.wrapper}
+                style={
+                    {
+                        height: `${expand ? `${heightRef.current.children[0].clientHeight}px` : '5.5rem'}`
+                    }
+                }
+                ref={heightRef}>
+                {parse(content.description)}
+            </div>
+            <button
+            className={style.btn}
+            onClick={()=> setExpand(curr => curr = !curr)}>{expand ? 'See less' : 'See More'}</button>
         </article>
-        <span className={style.img}>
-            <Image src={content.image_background} layout='fill' /> 
-        </span>
     </section>
   )
 }

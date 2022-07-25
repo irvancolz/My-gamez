@@ -2,7 +2,7 @@ import Link from "next/link"
 import style from './GameInfo.module.css'
 
 
-export default function GameInfo({info= '', content}){
+export default function GameInfo({info= '', content=[]}){
 //    content harus berupa array yang didalamnya object yang memiiki props 'name' dan 'slug'
     return(
         <div className={style.container}>
