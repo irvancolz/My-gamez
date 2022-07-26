@@ -33,7 +33,7 @@
     font-weight: 600;
     background-color: var(--blur-bg-col);
     color: var(--text-col);
-    border: 2px solid transparent;
+    border: 2px solid var(--text-col);
     border-radius: .25rem;
     margin-bottom: 3rem;
     transition: .3s ease-in-out;
@@ -55,10 +55,4 @@
 .btn.active{
     background-color: var(--text-col);
     color: var(--main-bg-col);
-}
-
-@media(hover:hover){
-    .btn:hover{
-        border: 2px solid var(--text-col);
-    }
 }
