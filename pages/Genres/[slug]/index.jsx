@@ -1191,11 +1191,13 @@ const gameListFilter =[
 ]
   return (
     <NestedLayout>
-        <GenreHeader content={HeaderContent}/>
-        <GameList name='For You' content={GameListContent} swipeable/>
-        <GameList name='Top Games of the Year' content={GameListContent} swipeable/>
-        <GameList name='Based on Your Platform' content={GameListContent} filter filterList={gameListFilter} listLinks='Platforms' />
-        <GameList name='All games' content={GameListContent}/>
+        <div className="container">
+            <GenreHeader content={HeaderContent}/>
+            <GameList name='For You' content={GameListContent} swipeable/>
+            <GameList name='Top Games of the Year' content={GameListContent} swipeable/>
+            <GameList name='Based on Your Platform' content={GameListContent} filter filterList={gameListFilter} listLinks='Platforms' />
+            <GameList name='All games' content={GameListContent}/>
+        </div>
     </NestedLayout>
   )
 }

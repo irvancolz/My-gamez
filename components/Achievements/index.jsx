@@ -78,7 +78,7 @@ export default function Achievements({achievements=[]}){
     ]
 
     return(
-        <div className={`${style.container} container`}>
+        <div className={style.container}>
             <h1 className="title">Achievements Section</h1>
             <div className={style.achievementsContainer}>
                 {results.map(achievement =>{

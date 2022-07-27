@@ -1,3 +1,7 @@
+.container{
+    width: 90%;
+    margin: auto;
+}
 .container h1{
     margin: 2rem 0;
 }
@@ -17,9 +21,11 @@
     outline: 1px solid var(--text-col);
     cursor: pointer;
 }
-.tag:hover{
-    background-color: var(--text-col);
-}
-.tag:hover p{
-    color: #000;
+@media(hover:hover){
+    .tag:hover{
+        background-color: var(--text-col);
+    }
+    .tag:hover p{
+        color: #000;
+    }
 }

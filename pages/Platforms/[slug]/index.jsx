@@ -1,5 +1,6 @@
 import React from 'react';
-import Components from '../../../components'
+import Components from '../../../components';
+import style from './platform.module.css'
 
 export default function TagsPages() {
     const {NestedLayout,GenreHeader, GameList} = Components();
@@ -11110,10 +11111,12 @@ export default function TagsPages() {
     ]
   return (
     <NestedLayout>
-        <GenreHeader content={HeaderContent}/>
-        <GameList name='For You' content={GameListContent} swipeable/>
-        <GameList name='Top Games of the Year' content={GameListContent} swipeable/>
-        <GameList name='All games' content={GameListContent}/>
+        <div className='container'>
+            <GenreHeader content={HeaderContent}/>
+            <GameList name='For You' content={GameListContent} swipeable/>
+            <GameList name='Top Games of the Year' content={GameListContent} swipeable/>
+            <GameList name='All games' content={GameListContent}/>
+        </div>
     </NestedLayout>
   )
 }

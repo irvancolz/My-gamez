@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import {BsBookmark, BsFillBookmarkFill} from 'react-icons/bs'
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function MainBanner(){
+export default function MainBanner({title='', id=''}){
     const [bookmark, setBookmark] = useState(false);
 
     function handleBookmark(){
@@ -47,7 +47,7 @@ export default function MainBanner(){
           src={forza} />
       </div>
       <div className={style.titleContainer}>
-          <h1 className={style.title}>Forza Horizon 5</h1>
+          <h1 className={style.title}>{title}</h1>
           <span 
             className={style.bookmark} 
             title="add to bookmark"

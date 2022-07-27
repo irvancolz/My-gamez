@@ -1,17 +1,19 @@
 import React from 'react';
 import Layout from '../Layout';
 import SideNav from '../SideNav';
-import styles from './NestedLayout.module.css';
+import style from './NestedLayout.module.css';
 
 export default function Nestedlayout({children}) {
   
   return (
     <Layout>
-        <div className={styles.container}>
-            <SideNav />
-            <div className={styles.content}>
+        <div className={style.container}>
+            <nav className={style.nav}>
+              <SideNav />
+            </nav>
+            <main className={style.content}>
                 {children}
-            </div>
+            </main>
         </div>
     </Layout>
   )

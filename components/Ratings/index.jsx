@@ -44,7 +44,7 @@ export default function Ratings({rate = []}){
      const totalRating = getTotalRatings(ratings);
 
     return(
-        <section className={`${style.container} container`}>
+        <section className={`${style.container}`}>
             <h1>User Ratings</h1>
             <div className={style.ratingHeader}>
                 <div className={style.starContainer}>

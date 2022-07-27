@@ -213,7 +213,7 @@ export default function Tags({listTags =[]}){
         }
     ]
     return(
-        <div className={`${style.container} container`}>
+        <div className={style.container}>
             <h1 className="title">Tags</h1>
             <div className={style.tagsContainer}>
                 {list.map(tag =>{

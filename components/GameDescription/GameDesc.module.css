@@ -1,6 +1,7 @@
-.mainContainer{
+.container{
     display: flex;
-    justify-content: space-between;
+    width: 90%;
+    margin: auto;
 }
 .descContainer{
    display: flex;
@@ -74,7 +75,7 @@
     }
 }
 @media(max-width : 900px){
-    .mainContainer{
+    .container{
         flex-direction: column;
         gap: 2rem;
     }
@@ -91,5 +92,8 @@
     }
     .description p:not(:first-child){
         margin-top: .25rem;
+    }
+    .container > div{
+        flex-basis: 100%;
     }
 }

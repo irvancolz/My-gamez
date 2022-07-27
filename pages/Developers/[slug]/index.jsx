@@ -4770,8 +4770,10 @@ export default function DevPages() {
     ]
   return (
     <NestedLayout>
-        <GenreHeader content={headerContent} />
-        <GameList name='All Games' content={gameContent} />
+        <div className="container">
+            <GenreHeader content={headerContent} />
+            <GameList name='All Games' content={gameContent} />
+        </div>
     </NestedLayout>
   )
 }

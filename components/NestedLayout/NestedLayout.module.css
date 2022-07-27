@@ -1,22 +1,38 @@
 .container{
-    margin: 8rem 4rem;
     position: relative;
+    margin: 8rem auto;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    max-width: 1400px;
+    width: 80%;
     gap: 1rem;
 }
 .content{
+    flex-basis: 70%;
    flex-grow: 1;
    overflow: hidden;
    max-width: 1100px;
 }
+.nav{
+    flex-basis: 25%;
+    max-width: 20rem;
+    background-color: var(--second-bg-col);
+    position: sticky;
+    top: 7rem;
+    height: 85vh;
+    overflow-y: auto;
+    z-index: 1;
+}
+.nav::-webkit-scrollbar{
+    opacity: 0;
+}
 @media(max-width: 1400px){
     .container{
-        margin: 7rem 4rem;
+       width: 90vw;
     }
     .content{
-        max-width: 80%;
+
     }
 }
 @media(max-width: 600px){
@@ -25,8 +41,5 @@
     }
     .content{
         width: 100%;
-    }
-    .gameList, .gameList.swipeable{
-        display: block;
     }
 }
