@@ -1515,9 +1515,9 @@ export default function index() {
         <Layout>
             <div className={style.mainContainer}>
                 <MainBanner title={game.name} id={game.id}/>
-                <GameDesc />
+                <GameDesc storesSlug={game.stores} />
                 <div className={style.bgwrapper}>
-                    <GameStory />
+                    <GameStory desc={game.description}/>
                     <Ratings />
                     <div className={style.wrapper}>
                         <Requirements />
@@ -1525,9 +1525,9 @@ export default function index() {
                     </div>
                     <BgImageComponent />
                 </div>
-                <div className={`${style.container} container`}>
-                    <GameList name='From The Same Series' content={gameContent} />
-                    <GameList name='From The Same Categories' content={gameContent}/>
+                <div className={`${style.container}`}>
+                    <GameList name='From The Same Series' content={gameContent} swipeable/>
+                    <GameList name='From The Same Categories' content={gameContent} swipeable />
                 </div>
                 <Tags />
             </div>

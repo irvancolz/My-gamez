@@ -1,6 +1,7 @@
 .container{
     margin: auto;
     width: 90%;
+    max-width: 1400px;
 }
 .container h1{
    margin-bottom: 2rem;

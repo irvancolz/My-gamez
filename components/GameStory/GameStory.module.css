@@ -1,5 +1,8 @@
 .mainContainer{
     position: relative;
+    width: 90%;
+    margin: auto;
+    max-width: 1400px;
 }
 .article{
     margin-top: 2rem;

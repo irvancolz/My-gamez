@@ -2,6 +2,7 @@
     display: flex;
     width: 90%;
     margin: auto;
+    max-width: 1400px;
 }
 .descContainer{
    display: flex;
@@ -25,13 +26,13 @@
     display: flex;
     gap: .5rem;
 }
-.buyBtnContainer{
+.storeBtnContainer{
    display: flex;
    gap: 1rem;
    flex-wrap: wrap;
    overflow: hidden;
 }
-.buyBtnContainer:target .storeBtn{
+.storeBtnContainer:target .storeBtn{
     transform: translateY(0);
 }
 .buyBtn, .favouriteBtn{

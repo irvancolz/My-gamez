@@ -13,16 +13,17 @@
 }
 .titleContainer{
     position: absolute;
-    left: 6rem;
     bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%,0);
+    max-width: 1400px;
 }
 .title{
+    display: inline;
     font-size: 4rem;
     font-weight: 600;
+    margin-left: 2rem;
 }
 .bookmark svg{
     font-size: 4rem;

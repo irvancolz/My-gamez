@@ -1,6 +1,14 @@
 .wrapper{
     display: flex;
+    width: 90%;
+    margin: auto;
+    max-width: 1400px;
 }
 .wrapper > *{
     flex-basis: 50%;
+}
+.container{
+    width: 90%;
+    margin: auto;
+    max-width: 1400px;
 }

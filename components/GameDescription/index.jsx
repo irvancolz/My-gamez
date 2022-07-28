@@ -13,7 +13,7 @@ import Link from 'next/link'
 import GameInfo from '../GameInfo'
 
 
-export default function GameDesc({platform=[], id ='', website= '', esrb={}, genres=[]}){
+export default function GameDesc({storesSlug = []}){
 
     const store =[
         {
@@ -32,9 +32,37 @@ export default function GameDesc({platform=[], id ='', website= '', esrb={}, gen
 
     return (
         <section className={style.container} >
-            <div className="">game desc
-                <div className="btnC">btn Container</div>
-                <div className="descC">game descr</div>
+            <div className="">
+                <div className="btnC">
+                    <button className="btn">
+                        <a href="#storeBtn">
+                            Buybtn
+                        </a>
+                    </button>
+                    <button className="btn">
+                        <a href=" ">
+                            love
+                        </a>
+                    </button>
+                    <div 
+                        id='storeBtn'
+                        className={style.storeBtnContainer}>
+                            {store.map((item, index) =>{
+                                return(
+                                <button
+                                    key={item.id}
+                                    className={style.storeBtn}>
+                                    <Link href={item.url}>
+                                        <a target='_blank'>
+                                        {storesSlug[index].store.name}
+                                        </a>
+                                    </Link>
+                                </button>
+                                )
+                            })}
+                    </div>
+                </div>
+                <div className="descC"> desc</div>
             </div>
             <div className="">
                <GamePicCarousel />

@@ -107,10 +107,11 @@ export default function GamePicCarousel(){
                         >
                         {imgSrc.map((img, index)=>{
                         return(
-                            <div className={style.img}>
+                            <div
+                                key={img.id} 
+                                className={style.img}>
                                 <Image 
                                 src={img.image}
-                                key={img.id}
                                 layout='fill'
                                 onMouseOver={()=> setDisplayedimage(index)}
                                 />
