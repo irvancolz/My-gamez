@@ -1036,8 +1036,6 @@ export default function index() {
             ]
         }
     ]
-
-
     const game = {
     "id": 622492,
     "slug": "forza-horizon-5",
@@ -1505,31 +1503,36 @@ export default function index() {
         MainBanner,
         GameDesc,
         GameStory,
+        GameTitle,
         Ratings,
         Requirements,
         Achievements,
         GameList,
         Tags,
-        BgImageComponent} = Components()
+        BgImageComponent} = Components();
+
       return (
         <Layout>
             <div className={style.mainContainer}>
-                <MainBanner title={game.name} id={game.id}/>
-                <GameDesc storesSlug={game.stores} />
-                <div className={style.bgwrapper}>
-                    <GameStory desc={game.description}/>
-                    <Ratings />
-                    <div className={style.wrapper}>
-                        <Requirements />
-                        <Achievements />
+                    <MainBanner dataBg={game.background_image} dataBgAdd={game.background_image_additional}/>
+                <div className={style.content}>
+                        <GameTitle title={game.name} id={game.id} />
+                        <GameDesc storesSlug={game.stores} />
+                    <div className={style.bgwrapper}>
+                        <GameStory desc={game.description}/>
+                        <Ratings />
+                        <div className={style.wrapper}>
+                            <Requirements />
+                            <Achievements />
+                        </div>
+                        <BgImageComponent />
                     </div>
-                    <BgImageComponent />
+                    <div className={`${style.container}`}>
+                        <GameList name='From The Same Series' content={gameContent} swipeable/>
+                        <GameList name='From The Same Categories' content={gameContent} swipeable />
+                    </div>
+                    <Tags />
                 </div>
-                <div className={`${style.container}`}>
-                    <GameList name='From The Same Series' content={gameContent} swipeable/>
-                    <GameList name='From The Same Categories' content={gameContent} swipeable />
-                </div>
-                <Tags />
             </div>
         </Layout>
       );

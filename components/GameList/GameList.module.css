@@ -1,5 +1,5 @@
 .container{
-
+    max-width: 100%;
 }
 .gameList{
     position: relative;

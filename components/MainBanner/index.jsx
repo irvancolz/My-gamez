@@ -1,59 +1,26 @@
-import style from './MainBanner.module.css'
-import Image from 'next/image'
-import forza from '../../public/images/forza.jpg';
-import { useState } from 'react';
-import { toast } from 'react-toastify';
-import {BsBookmark, BsFillBookmarkFill} from 'react-icons/bs'
-import 'react-toastify/dist/ReactToastify.css';
+import { useEffect,useState} from 'react'
+import style from './MainBanner.module.css';
 
-export default function MainBanner({title='', id=''}){
-    const [bookmark, setBookmark] = useState(false);
+export default function MainBanner({ dataBg=''}){
+  const [scrolled, setScrolled] = useState(0);
 
-    function handleBookmark(){
-      setBookmark(curr => curr = !curr);
-      showToast(!bookmark)
-    }
-
-    function showToast(bookmark){
-      if(bookmark){
-        toast.success('Added to bookmark', {
-          position: "top-center",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'dark'
-          });
-      }else{
-        toast.info('Deleted from bookmark', {
-          position: "top-center",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'dark'
-          });
-      }
-    }
-
+    useEffect(()=>{
+      window.addEventListener('scroll', ()=>{
+        window.pageYOffset > 500 ? setScrolled(500) :
+        setScrolled(curr => curr = window.pageYOffset);
+    })
+    })
     return(
-    <section className={style.container}>
-      <div className={style.image}>
-          <Image 
-          src={forza} />
-      </div>
-      <div className={style.titleContainer}>
-          <h1 className={style.title}>{title}</h1>
-          <span 
-            className={style.bookmark} 
-            title="add to bookmark"
-            onClick={(e)=> handleBookmark()}>
-            {bookmark ? <BsFillBookmarkFill /> : <BsBookmark />}
-          </span>
+    <section 
+      className={style.container}>
+      <div className={style.image}
+        style={
+          { 
+            filter: `brightness(${scrolled >= 500 ? .3 : scrolled > 300 ? .5 : scrolled > 50 ? .7  : 1})`,
+            backgroundImage: `url(${dataBg})`,
+          }
+        }>
+         
       </div>
     </section>
     )

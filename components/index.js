@@ -4,6 +4,7 @@ import MainBanner from "./MainBanner";
 import GameDesc from "./GameDescription";
 import GamePicCarousel from "./GamePicCarousel";
 import GameStory from "./GameStory";
+import GameTitle from "./GameTitle";
 import Ratings from "./Ratings";
 import Requirements from "./Requirements";
 import Achievements from "./Achievements";
@@ -26,6 +27,7 @@ export default function Components(){
             GameDesc,
             GamePicCarousel,
             GameStory,
+            GameTitle,
             Ratings,
             Searchbar,
             Requirements,

@@ -33,7 +33,7 @@ export default function GameList({name= '', content = [], filter = false, filter
 
     useEffect(()=>{
         // update gamelist on every filter changed
-       
+
        
     },[filterVal])
 

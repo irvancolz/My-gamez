@@ -1,3 +1,6 @@
+.mainContainer{
+    position: relative;
+}
 .wrapper{
     display: flex;
     width: 90%;
@@ -11,4 +14,7 @@
     width: 90%;
     margin: auto;
     max-width: 1400px;
+}
+.content{
+    background-color: var(--main-bg-col);
 }

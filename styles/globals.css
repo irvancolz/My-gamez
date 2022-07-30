@@ -61,7 +61,6 @@ button{
 }
 .container > *{
   flex-basis: 100%;
-  border: 1px dashed #eee;
 }
 .title{
   font-size: 2.25rem;

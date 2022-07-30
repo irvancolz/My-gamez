@@ -1,43 +1,12 @@
 .container{
-    position: relative;
+    position: sticky;
+    top: -1px;
+    z-index: -100;
 }
 .image{
-    min-width: 100%;
-    height: 100%;
-}
-.image span{
-    min-width: 100%;
-}
-.image img{
-    filter: brightness(.6);
-}
-.titleContainer{
-    position: absolute;
-    bottom: 1rem;
-    width: 90%;
-    left: 50%;
-    transform: translate(-50%,0);
-    max-width: 1400px;
-}
-.title{
-    display: inline;
-    font-size: 4rem;
-    font-weight: 600;
-    margin-left: 2rem;
-}
-.bookmark svg{
-    font-size: 4rem;
-    cursor: pointer;
-}
-@media(max-width : 600px){
-    .titleContainer{
-        left: 1rem;
-        gap: 1rem;
-    }
-    .title{
-        font-size: 2.5rem;
-    }
-    .bookmark svg{
-        font-size: 2rem;
-    }
+    max-width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: filter .5s ease-in-out;
 }
