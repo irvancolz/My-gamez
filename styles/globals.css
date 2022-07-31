@@ -10,8 +10,10 @@
   --green-bg-col: #00FFAB;
   --red-bg-col: #FD5D5D;
   --gold-bg-col: #ECCE85;
-  --cyan-hover-bg-col: #09cec7;
-  --green-hover-bg-col: #07bd80;
+  --cyan-blur-bg-col: #00fff7d8;
+  --green-blur-bg-col: #00ffaabe;
+  --red-blur-bg-col: #fd5d5dc7;
+  --gold-blur-bg-col: #eccf85d3;
   --blur-bg-col: rgba(255, 255, 255, 0.14);
   --dark-blur-bg-col: rgba(0, 0, 0, 0.17);
   --dark-bg-col: #222831a2;

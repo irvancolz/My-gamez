@@ -10,7 +10,8 @@ import {AiOutlineDownload} from 'react-icons/ai';
 import {GrAppleAppStore} from 'react-icons/gr';
 import {SiEpicgames} from 'react-icons/si';
 import Link from 'next/link'
-import GameInfo from '../GameInfo'
+import GameInfo from '../GameInfo';
+import CustomBtn from '../CustomBtn';
 
 
 export default function GameDesc({storesSlug = []}){
@@ -34,30 +35,28 @@ export default function GameDesc({storesSlug = []}){
         <section className={style.container} >
             <div className="">
                 <div className="btnC">
-                    <button className="btn">
+                    <CustomBtn 
+                        bg='green'>
                         <a href="#storeBtn">
                             Buybtn
                         </a>
-                    </button>
-                    <button className="btn">
-                        <a href=" ">
-                            love
-                        </a>
-                    </button>
+                    </CustomBtn>
                     <div 
                         id='storeBtn'
                         className={style.storeBtnContainer}>
                             {store.map((item, index) =>{
                                 return(
-                                <button
-                                    key={item.id}
-                                    className={style.storeBtn}>
+                                <CustomBtn
+                                    variant='round'
+                                    code='secondary'
+                                    bg='blur'
+                                    key={item.id}>
                                     <Link href={item.url}>
                                         <a target='_blank'>
                                         {storesSlug[index].store.name}
                                         </a>
                                     </Link>
-                                </button>
+                                </CustomBtn>
                                 )
                             })}
                     </div>

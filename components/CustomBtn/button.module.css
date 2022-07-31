@@ -1,0 +1,68 @@
+/* global styling */
+.container{
+    border: 2px solid transparent;
+    width: fit-content;
+    padding: .75rem 1.5rem;
+    transition: background-color .3s ease-in-out;
+}
+.btn{
+    background-color: transparent;
+    border: 1px solid transparent;
+    outline: 1px solid transparent;
+}
+.btn > *{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
+/* variant */
+.container.box{
+    border-radius: .5rem;
+}
+.container.round{
+    border-radius: 2rem;
+}
+.container.second{
+    border: 2px solid #eee;
+}
+.container.red{
+    background-color: var(--red-bg-col);
+}
+.container.white{
+    background-color: var(--text-col);
+}
+.container.green{
+    background-color: var(--green-bg-col);
+}
+.container.blur{
+    background-color: var(--blur-bg-col);
+}
+
+/* content color*/
+.container.blur *{
+    color: var(--text-col);
+}
+.container.green *,.container.red,.container.container.white{
+    color: var(--main-bg-col);
+}
+
+/* on hover effect */
+@media(hover:hover){
+    .container.blur:hover{
+        background-color: var(--text-col);
+    }
+    .container.blur:hover *{
+        color: var(--main-bg-col);
+    }
+    .container.red:hover{
+        background-color: var(--red-blur-bg-col);
+    }
+    .container.green:hover{
+        background-color: var(--green-blur-bg-col);
+    }
+    .container.white:hover{
+        background-color: var(--blur-bg-col);
+    }
+
+}
