@@ -10,7 +10,10 @@
     border: 1px solid transparent;
     outline: 1px solid transparent;
 }
-.btn > *{
+.btn, .btn > *{
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
     font-size: 1.5rem;
     font-weight: 500;
 }
@@ -25,6 +28,9 @@
 }
 .container.second{
     border: 2px solid #eee;
+}
+.container.third{
+    background-color: rgba(255, 255, 255, 0);
 }
 .container.red{
     background-color: var(--red-bg-col);

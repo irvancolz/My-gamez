@@ -1,28 +1,6 @@
 .mainContainer{
     position: relative;
-    width: 90%;
-    margin: auto;
-    max-width: 1400px;
 }
 .article{
-    margin-top: 2rem;
     overflow: hidden;
-    padding: 1.75rem 2rem;
-    transition: height  .5s ease-in-out;
-    background-color: var(--dark-blur-bg-col);
-    border: 1px solid var(--text-col);
-    border-radius: .25rem;
-}
-.toggleBtn{
-    margin-top: 1rem;
-    border: 1px solid var(--text-col);
-    background-color: var(--blur-bg-col);
-    color: var(--text-col);
-    font-size: 1rem;
-    font-weight: 600;
-    transition: .5s ease-in-out;
-}
-.toggleBtn:hover{
-    background-color: var(--text-col);
-    color: var(--main-bg-col);
 }

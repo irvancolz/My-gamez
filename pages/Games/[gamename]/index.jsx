@@ -1502,7 +1502,6 @@ export default function index() {
         Layout,
         MainBanner,
         GameDesc,
-        GameStory,
         GameTitle,
         Ratings,
         Requirements,
@@ -1517,9 +1516,8 @@ export default function index() {
                     <MainBanner dataBg={game.background_image} dataBgAdd={game.background_image_additional}/>
                 <div className={style.content}>
                         <GameTitle title={game.name} id={game.id} />
-                        <GameDesc storesSlug={game.stores} />
+                        <GameDesc storesSlug={game.stores} desc={game.description}/>
                     <div className={style.bgwrapper}>
-                        <GameStory desc={game.description}/>
                         <Ratings />
                         <div className={style.wrapper}>
                             <Requirements />

@@ -1,20 +1,14 @@
-import style from './GameDesc.module.css'
-import image1  from '../../public/images/forza2.jpg'
-import image2  from '../../public/images/forza-carousel-2.jpg'
-import image3  from '../../public/images/forza-carousel.jpg'
-import GamePicCarousel from '../GamePicCarousel'
-import { FiShoppingCart } from 'react-icons/fi'
-import { IoAdd } from 'react-icons/io5'
-import {FaSteam, FaXbox, FaGooglePlay, FaPlaystation} from 'react-icons/fa'
-import {AiOutlineDownload} from 'react-icons/ai';
-import {GrAppleAppStore} from 'react-icons/gr';
-import {SiEpicgames} from 'react-icons/si';
-import Link from 'next/link'
+import style from './GameDesc.module.css';
+import GamePicCarousel from '../GamePicCarousel';
+import { FiShoppingCart } from 'react-icons/fi';
+import Link from 'next/link';
 import GameInfo from '../GameInfo';
 import CustomBtn from '../CustomBtn';
+import StoreLogo from '../StoreLogo';
+import GameStory from '../GameStory';
 
 
-export default function GameDesc({storesSlug = []}){
+export default function GameDesc({storesSlug = [], desc=''}){
 
     const store =[
         {
@@ -33,11 +27,12 @@ export default function GameDesc({storesSlug = []}){
 
     return (
         <section className={style.container} >
-            <div className="">
-                <div className="btnC">
+            <div className={style.content}>
+                <div className={style.btnContainer}>
                     <CustomBtn 
                         bg='green'>
                         <a href="#storeBtn">
+                            <FiShoppingCart />
                             Buybtn
                         </a>
                     </CustomBtn>
@@ -46,24 +41,35 @@ export default function GameDesc({storesSlug = []}){
                         className={style.storeBtnContainer}>
                             {store.map((item, index) =>{
                                 return(
-                                <CustomBtn
-                                    variant='round'
-                                    code='secondary'
-                                    bg='blur'
-                                    key={item.id}>
-                                    <Link href={item.url}>
-                                        <a target='_blank'>
-                                        {storesSlug[index].store.name}
-                                        </a>
-                                    </Link>
-                                </CustomBtn>
+                                    <span 
+                                        className={style.btn}
+                                        key={item.id}
+                                        style={
+                                            {
+                                                '--delay-time' : index,
+                                            }
+                                        }>        
+                                        <CustomBtn
+                                            code='secondary'
+                                            bg='blur'
+                                            >
+                                            <Link href={item.url}>
+                                                <a target='_blank'>
+                                                <StoreLogo content={item.store_id} />
+                                                {storesSlug[index].store.name}
+                                                </a>
+                                            </Link>
+                                        </CustomBtn>
+                                    </span>
                                 )
                             })}
                     </div>
                 </div>
-                <div className="descC"> desc</div>
+                <div className={style.desc}>
+                    <GameStory desc={desc}/>
+                </div>
             </div>
-            <div className="">
+            <div className={style.carousel}>
                <GamePicCarousel />
             </div>
         </section>

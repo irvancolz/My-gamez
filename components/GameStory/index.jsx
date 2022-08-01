@@ -1,6 +1,7 @@
 import {useRef, useState} from 'react';
 import style from './GameStory.module.css';
-import parser from 'html-react-parser'
+import parser from 'html-react-parser';
+import CustomBtn from '../CustomBtn';
 
 export default function GameStory({desc = " "}){
     const paraRef = useRef();
@@ -8,26 +9,26 @@ export default function GameStory({desc = " "}){
 
     return(
         <section className={`${style.mainContainer}`}>
-            <div>
-                <h1 className="title">Game Prolog</h1>
-                <div>
-                    <article 
-                    className={style.article}
-                    style={{
-                        height: `${expandDesc ? `calc(${paraRef.current.clientHeight}px + 3.5rem)` : '150px'}`
-                    }}
+            <article 
+                className={style.article}
+                style={{
+                    height: `${expandDesc ? `calc(${paraRef.current.clientHeight}px + 3.5rem)` : '150px'}`
+                }}>
+                    <div 
+                    className={style.content}
+                    ref={paraRef}>
+                        {parser(desc)}
+                    </div>
+            </article>
+            {/* toggle height */}
+            <span 
+                onClick={() => setExpandDesc(curr => curr = !curr)}>
+                <CustomBtn
+                    code='secondary'
                     >
-                        <div ref={paraRef}>
-                            {parser(desc)}
-                        </div>
-                    </article>
-                    <button 
-                        type='button'
-                        className={`${style.toggleBtn} btn`}
-                        onClick={()=> setExpandDesc( curr => !curr)}
-                    >{expandDesc ? "Show Less" : "Show More"}</button>
-                </div>
-            </div>
+                        show {expandDesc ? 'less' : 'more'}
+                </CustomBtn>
+            </span>
         </section>
     )
 }

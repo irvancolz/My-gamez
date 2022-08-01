@@ -4,97 +4,26 @@
     margin: auto;
     max-width: 1400px;
 }
-.descContainer{
-   display: flex;
-   flex-direction: column;
-   gap: 2rem;
-} 
-.btnContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
 .container > div{
     flex-basis: 50%;
 }
-.optionBtnContainer{
-    display: flex;
-    gap: 1rem;
-}
-.optionBtnContainer button{
-    display: flex;
-    gap: .5rem;
+.btnContainer > div{
+    position: relative;
+    z-index: 1;
 }
 .storeBtnContainer{
-   display: flex;
-   gap: 1rem;
-   flex-wrap: wrap;
-   overflow: hidden;
-}
-.storeBtnContainer:target .storeBtn{
-    transform: translateY(0);
-}
-.buyBtn, .favouriteBtn{
-    transition: background-color .3s ease-in-out;
-}
-.buyBtn{
-    background-color: var(--cyan-bg-col);
-}
-.favouriteBtn{
-    background-color: var(--green-bg-col);
-}
-.buyBtn a{
-    color: var(--main-bg-col);
-}
-.storeBtn{
+    margin-top: 1.5rem;
     display: flex;
-    gap: .5rem;
-    background-color: var(--second-bg-col);
-    border: 1px solid var(--text-col);
-    color: var(--text-col);
-    transition: transform .5s ease-in-out calc(var(--animation-order) * 150ms) , background-color .3s ease-in-out;
-    transform: translateY(-250%);
+    gap: 1rem;
+    flex-wrap: wrap;
 }
-
-@media(hover:hover){
-    .link:hover{
-        text-decoration: underline;    
-    }
-    .storeBtn:hover{
-        background-color: var(--text-col);
-        color: var(--main-bg-col);
-    }
-    .storeBtn:hover .buttonText{
-        color: var(--main-bg-col);
-    }
-    .buyBtn:hover{
-        background-color: var(--cyan-hover-bg-col);
-    }
-    .favouriteBtn:hover{
-        background-color: var(--green-hover-bg-col);
-    }
+.btn{
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: transform .5s ease-in-out, opacity .3s ease-in-out ;
+    transition-delay: calc(var(--delay-time) * .2s);
 }
-@media(max-width : 900px){
-    .container{
-        flex-direction: column;
-        gap: 2rem;
-    }
-}
-@media(max-width : 600px){
-    .btnContainer{
-        gap: 1rem;
-    }
-    .btnContent{
-        gap: 1rem;
-    }
-    .btnContent p{
-        font-size: 1rem;
-    }
-    .description p:not(:first-child){
-        margin-top: .25rem;
-    }
-    .container > div{
-        flex-basis: 100%;
-    }
+.storeBtnContainer:target .btn{
+    transform: translateY(0);
+    opacity: 1;
 }
