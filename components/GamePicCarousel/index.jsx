@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import style from './GamePicCarousel.module.css';
 import Image from 'next/image';
-import {BsChevronLeft, BsChevronRight} from 'react-icons/bs'
+import {BsChevronLeft, BsChevronRight} from 'react-icons/bs';
+import {AiOutlineEye} from 'react-icons/ai'
 
 export default function GamePicCarousel(){
-    const [displayedImage, setDisplayedimage] = useState(0);
     const [carouselCounter, setCarouselCounter] = useState(0);
+    const [showImg, setShowImg] = useState(true);
 
-    const imgSrc =  [
+    const imageContent =  [
         {
             "id": 2882904,
             "image": "https://media.rawg.io/media/screenshots/5e2/5e2e7ccb084034da25d0b21b7c03c273.jpg",
@@ -60,7 +61,7 @@ export default function GamePicCarousel(){
         }
     }
    function addCarouselCounter (){
-        if(carouselCounter >= imgSrc.length - 2){
+        if(carouselCounter >= imageContent.length - 2){
             return
         }else{
             setCarouselCounter(curr => curr + 1)
@@ -70,7 +71,40 @@ export default function GamePicCarousel(){
 
     return(
         <div className={style.container}>
-
+            <div className={style.imageContainer}>
+                {imageContent.map((img, index) =>{
+                    return(
+                        <div
+                            key={img.id} 
+                            className={style.image}
+                            style={
+                                {
+                                    opacity: `${carouselCounter === index ? ' 1' : '0'}`,
+                                }
+                            }>
+                            <Image src={img.image} layout='fill' priority />
+                        </div>
+                    )
+                })}
+            </div>
+            <div className={style.navContainer}>
+                <div 
+                    className={style.nav}
+                    onClick={()=> minCarouselCounter()}>
+                    <BsChevronLeft />
+                </div>
+                <div 
+                    title='see images'
+                    className={`${style.nav} ${style.eyeIcon}`}
+                    onClick={()=> setShowImg(true)}>
+                    <AiOutlineEye />
+                </div>
+                <div 
+                    className={style.nav}
+                    onClick={()=> addCarouselCounter()}>
+                    <BsChevronRight />
+                </div>
+            </div>
         </div>
     )
 }

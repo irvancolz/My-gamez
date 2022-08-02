@@ -1,3 +1,83 @@
 .container{
-    border: 1px dashed #eee;
+    position: relative;
+    overflow: hidden;
+    height: 700px;
+    aspect-ratio: 8/10;
+}
+.imageContainer{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+.image{
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 16 / 9; 
+    transition: opacity .3s ease-in-out;
+    transform: translateX(-50%);
+}
+.navContainer{
+    position: absolute;
+    height: 10%;
+    right: 0;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: none;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+.nav{
+    padding: 1rem;
+    display: grid;
+    place-items: center;
+    background-color: var(--blur-bg-col);
+    border-radius: .15rem;
+    cursor: pointer;
+}
+.nav:first-child{
+    animation: slideRight .5s linear;
+}
+.nav:last-child{
+    animation: slideLeft .5s linear;
+}
+.eyeIcon{
+   animation: popIcon .5s linear;
+}
+@media(hover:hover){
+    .container:hover .navContainer{
+        display: flex;
+    }
+    .nav:hover svg{
+        color: var(--main-bg-col);
+    }
+}
+@keyframes slideRight{
+    0%{
+        opacity: 0;
+        transform: translateX(-1rem)
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slideLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(1rem)
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes popIcon{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

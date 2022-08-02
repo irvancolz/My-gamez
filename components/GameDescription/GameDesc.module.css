@@ -1,5 +1,6 @@
 .container{
     display: flex;
+    justify-content: space-between;
     width: 90%;
     margin: auto;
     max-width: 1400px;
@@ -7,7 +8,10 @@
 .container > div{
     flex-basis: 50%;
 }
-.btnContainer > div{
+.carousel > *:first-child{
+    margin-left: auto;
+}
+.btnContainer > div:first-child{
     position: relative;
     z-index: 1;
 }
@@ -29,5 +33,4 @@
 }
 .desc{
     margin: 2rem 0;
-    padding-right: 2rem;
 }
