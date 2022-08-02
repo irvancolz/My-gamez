@@ -3,7 +3,7 @@ import style from './GamePicCarousel.module.css';
 import Image from 'next/image';
 import {BsChevronLeft, BsChevronRight} from 'react-icons/bs'
 
-export default function GamePicCarousel({id=''}){
+export default function GamePicCarousel(){
     const [displayedImage, setDisplayedimage] = useState(0);
     const [carouselCounter, setCarouselCounter] = useState(0);
 
@@ -67,74 +67,10 @@ export default function GamePicCarousel({id=''}){
         }
         
     }
-    function addDisplayedImg(){
-        if(displayedImage >= imgSrc.length - 1){
-            return setDisplayedimage(0);
-        }else{
-            setDisplayedimage( curr => curr + 1);
-        }
-    }
 
     return(
-        <div className={style.mainContainer}>
-            <div className={style.imgShowContainer}>
-                <div 
-                className={style.imgShow}
-                style={{
-                    transform: `translateX(${displayedImage * -100}%`,
-                }}>
-                    {imgSrc.map(img=>{
-                        return (
-                            <div
-                                key={img.id} 
-                                className={style.imgS}>
-                                <Image  
-                                src={img.image}
-                                layout='fill'
-                                />
-                            </div>
-                                )
-                    })}
-                </div>
-            </div>
-            <div className={style.carouselContainer}>
-                <div className={style.carouselImgContainer}>
-                    <div 
-                        className={style.carouselImg}
-                        style={{
-                            transform: `translateX(${carouselCounter * - 50}%)`,
-                        }}
-                        >
-                        {imgSrc.map((img, index)=>{
-                        return(
-                            <div
-                                key={img.id} 
-                                className={style.img}>
-                                <Image 
-                                src={img.image}
-                                layout='fill'
-                                onMouseOver={()=> setDisplayedimage(index)}
-                                />
-                            </div>
-                            )
-                        })}
-                    </div>
-                </div>
-                <div className={style.navContainer}>
-                    <button
-                        className={style.toggleBtn}
-                        onClick={()=> minCarouselCounter()}>
-                        <BsChevronLeft />
-                    </button>
+        <div className={style.container}>
 
-                    <button
-                    className={style.toggleBtn}
-                    onClick={()=> addCarouselCounter()}
-                    >
-                        <BsChevronRight />
-                    </button>
-                </div>
-            </div>
         </div>
     )
 }

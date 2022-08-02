@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import style from './gametitle.module.css';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import {BsBookmark, BsFillBookmarkFill} from 'react-icons/bs';
 import 'react-toastify/dist/ReactToastify.css';
+import { GameId } from '../../Context/gameId';
 
 export default function GameTitle({title='', id=''}) {
     const [bookmark, setBookmark] = useState(false);
+    const {changeId} = useContext(GameId);
+
 
     function handleBookmark(){
       setBookmark(curr => curr = !curr);
@@ -38,6 +41,11 @@ export default function GameTitle({title='', id=''}) {
           });
       }
     }
+
+    useEffect(()=>{
+      changeId(id);
+    })
+
   return (
     <div className={style.container}>
         <div className={style.titleContainer}>

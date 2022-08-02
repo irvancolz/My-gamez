@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import styles from './Menugroup.module.css';
 import Link from 'next/link';
-import {Sidenav} from '../../Context/Sidenav';
+import {Sidenav} from '../../Context/sidenav';
 
 export default function MenuGroup({title='', menu=[]}) {
     const {activeLink, handleActive} = useContext(Sidenav);

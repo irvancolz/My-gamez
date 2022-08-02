@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {AiFillStar, AiOutlineStar} from 'react-icons/ai';
 import {BsFillEmojiHeartEyesFill,BsFillEmojiSunglassesFill, BsFillEmojiNeutralFill, BsEmojiFrownFill, BsEmojiAngryFill} from "react-icons/bs"
 import style from './AddRating.module.css'

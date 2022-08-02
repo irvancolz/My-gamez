@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react';
 
 export default function Layout({ children}) {
-  const {SideNavContext} = Context();
+  const {SideNavContext, GameIdContext} = Context();
   const [navFade, setNavFade] = useState(false);
 
   useEffect(()=>{
@@ -21,29 +21,31 @@ export default function Layout({ children}) {
   })
   return (
     <SideNavContext>
-      <div className={styles.container}>
-        <ToastContainer />
-        <Topnav />
-        <div id="topOfPages"></div>
-        <div className={styles.content}>
+      <GameIdContext>
+        <div className={styles.container}>
+          <ToastContainer />
+          <Topnav />
+          <div id="topOfPages"></div>
+          <div className={styles.content}>
 
-          {/* your pages here */}
-          {children}
+            {/* your pages here */}
+            {children}
 
 
+          </div>
+          <div 
+          className={styles.toTop}
+          style={{
+            opacity: `${navFade ? 1 : 0}`,
+            transform: `${navFade ? 'translateY(0)' : 'translateY(100%)'}`
+          }}
+          >
+            <Link href="#topOfPages">
+              <AiOutlineUp />
+            </Link>
+          </div>
         </div>
-        <div 
-        className={styles.toTop}
-        style={{
-          opacity: `${navFade ? 1 : 0}`,
-          transform: `${navFade ? 'translateY(0)' : 'translateY(100%)'}`
-        }}
-        >
-          <Link href="#topOfPages">
-            <AiOutlineUp />
-          </Link>
-        </div>
-      </div>
+      </GameIdContext>
     </SideNavContext>
   );
 }
