@@ -14,8 +14,9 @@
     display: flex;
     gap: .5rem;
     justify-content: center;
+    align-items: center;
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 800;
 }
 
 
@@ -29,9 +30,6 @@
 .container.second{
     border: 2px solid #eee;
 }
-.container.third{
-    background-color: rgba(255, 255, 255, 0);
-}
 .container.red{
     background-color: var(--red-bg-col);
 }
@@ -44,9 +42,15 @@
 .container.blur{
     background-color: var(--blur-bg-col);
 }
+.container.third, .container.clear{
+    text-align: left;
+    padding: 0;
+   background-color: transparent;
+}
+
 
 /* content color*/
-.container.blur *{
+.container.blur *, .container.clear, .container.third *{
     color: var(--text-col);
 }
 .container.green *,.container.red,.container.container.white{
@@ -70,5 +74,7 @@
     .container.white:hover{
         background-color: var(--blur-bg-col);
     }
-
+    .container.clear:hover *, .container.third:hover *{
+        text-decoration: underline;
+    }
 }

@@ -12,7 +12,7 @@ export default function GameStory({desc = " "}){
             <article 
                 className={style.article}
                 style={{
-                    height: `${expandDesc ? `calc(${paraRef.current.clientHeight}px + 3.5rem)` : '150px'}`
+                    height: `${expandDesc ? `${paraRef.current.clientHeight}px` : '150px'}`
                 }}>
                     <div 
                     className={style.content}
@@ -24,7 +24,8 @@ export default function GameStory({desc = " "}){
             <span 
                 onClick={() => setExpandDesc(curr => curr = !curr)}>
                 <CustomBtn
-                    code='secondary'
+                    code='ternary'
+                    bg='clear'
                     >
                         show {expandDesc ? 'less' : 'more'}
                 </CustomBtn>

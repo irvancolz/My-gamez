@@ -6,7 +6,7 @@ export default function CustomBtn({children, variant='box', code ='primary', bg=
     <div className={`
       ${style.container} ${variant == 'round' ? style.round : style.box } 
       ${code == 'ternary' ? style.third : code == 'secondary' ? style.second : style.prime}
-      ${bg == 'red' ? style.red : bg == 'green' ? style.green : bg == 'blur' ? style.blur : style.white} `}>
+      ${bg == 'red' ? style.red : bg == 'green' ? style.green : bg == 'blur' ? style.blur : bg=='clear'? style.clear : style.white} `}>
       <button className={style.btn}>
         {children}
       </button>

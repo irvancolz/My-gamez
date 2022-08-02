@@ -3,7 +3,7 @@ import style from './GamePicCarousel.module.css';
 import Image from 'next/image';
 import {BsChevronLeft, BsChevronRight} from 'react-icons/bs'
 
-export default function GamePicCarousel(){
+export default function GamePicCarousel({id=''}){
     const [displayedImage, setDisplayedimage] = useState(0);
     const [carouselCounter, setCarouselCounter] = useState(0);
 

@@ -27,3 +27,7 @@
     transform: translateY(0);
     opacity: 1;
 }
+.desc{
+    margin: 2rem 0;
+    padding-right: 2rem;
+}

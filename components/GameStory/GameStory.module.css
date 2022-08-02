@@ -3,4 +3,9 @@
 }
 .article{
     overflow: hidden;
+    transition: height .5s ease-in-out;
+}
+.content *{
+    font-size: 1.15rem;
+    color: var(--second-text-col);
 }

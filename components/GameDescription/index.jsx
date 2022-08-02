@@ -33,7 +33,7 @@ export default function GameDesc({storesSlug = [], desc=''}){
                         bg='green'>
                         <a href="#storeBtn">
                             <FiShoppingCart />
-                            Buybtn
+                            Buy
                         </a>
                     </CustomBtn>
                     <div 
