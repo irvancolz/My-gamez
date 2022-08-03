@@ -1,12 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import style from './GamePicCarousel.module.css';
 import Image from 'next/image';
 import {BsChevronLeft, BsChevronRight} from 'react-icons/bs';
-import {AiOutlineEye} from 'react-icons/ai'
+import {AiOutlineEye} from 'react-icons/ai';
+import LightBox from '../Lightbox';
 
 export default function GamePicCarousel(){
+    const sliderRef = useRef(null);
     const [carouselCounter, setCarouselCounter] = useState(0);
     const [showImg, setShowImg] = useState(true);
+
+
+    // controlling interaction
 
     const imageContent =  [
         {
@@ -69,9 +74,15 @@ export default function GamePicCarousel(){
         
     }
 
+    // controlling animation
+
+
+
     return(
         <div className={style.container}>
-            <div className={style.imageContainer}>
+            <div 
+                ref={sliderRef}
+                className={style.imageContainer}>
                 {imageContent.map((img, index) =>{
                     return(
                         <div
@@ -79,7 +90,7 @@ export default function GamePicCarousel(){
                             className={style.image}
                             style={
                                 {
-                                    opacity: `${carouselCounter === index ? ' 1' : '0'}`,
+                                    display: `${carouselCounter === index ? 'block' : 'none'}`,
                                 }
                             }>
                             <Image src={img.image} layout='fill' priority />
@@ -105,6 +116,9 @@ export default function GamePicCarousel(){
                     <BsChevronRight />
                 </div>
             </div>
+            {showImg && 
+                <LightBox images={imageContent} setShowImg={setShowImg} counter={carouselCounter}/>
+            }
         </div>
     )
 }

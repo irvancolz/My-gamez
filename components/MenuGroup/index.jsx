@@ -8,7 +8,7 @@ export default function MenuGroup({title='', menu=[]}) {
    
   return (
     <div className={styles.container}>
-        <Link href={``}>
+        <Link href={''}>
             <h3
             onClick={() => handleActive(title)} 
             className={`${styles.title} ${activeLink === title ? styles.active : null}`}>
@@ -23,7 +23,7 @@ export default function MenuGroup({title='', menu=[]}) {
                     className={`${styles.link} ${activeLink === item.name ? styles.active : null}`}
                     onClick={() => handleActive(item.name)}
                     >
-                        <Link href={``}>{item.name}</Link>
+                        <Link href={''}>{item.name}</Link>
                     </li>
                 )
             })}

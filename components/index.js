@@ -17,6 +17,7 @@ import NestedLayout from "./NestedLayout";
 import MainCarousel from "./MainCarousel";
 import Searchbar from "./Searchbar";
 import GenreHeader from "./GenreHeader";
+import LightBox from "./Lightbox";
 
 export default function Components(){
     return(
@@ -28,6 +29,7 @@ export default function Components(){
             GamePicCarousel,
             GameStory,
             GameTitle,
+            LightBox,
             Ratings,
             Searchbar,
             Requirements,

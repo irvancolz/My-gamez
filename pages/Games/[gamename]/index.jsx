@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import Components from '../../../components';
 import style from './game.module.css';
 

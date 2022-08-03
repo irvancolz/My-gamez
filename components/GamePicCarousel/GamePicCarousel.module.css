@@ -3,17 +3,21 @@
     overflow: hidden;
     height: 700px;
     aspect-ratio: 8/10;
+
 }
 .imageContainer{
     position: relative;
     height: 100%;
-    overflow: hidden;
 }
 .image{
     position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     aspect-ratio: 16 / 9; 
-    transition: opacity .3s ease-in-out;
+}
+.image img{
+    animation: slideImg 6s ease-in-out;
     transform: translateX(-50%);
 }
 .navContainer{
@@ -55,7 +59,7 @@
 @keyframes slideRight{
     0%{
         opacity: 0;
-        transform: translateX(-1rem)
+        transform: translateX(-100%)
     }
     100%{
         opacity: 1;
@@ -65,11 +69,21 @@
 @keyframes slideLeft{
     0%{
         opacity: 0;
-        transform: translateX(1rem)
+        transform: translateX(100%)
     }
     100%{
         opacity: 1;
         transform: translateX(0);
+    }
+}
+@keyframes slideImg{
+    0%{
+        opacity: 0;
+        transform: translateX(0)
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(-50%);
     }
 }
 @keyframes popIcon{
