@@ -1,0 +1,38 @@
+.rating{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.rating p:first-child{
+    flex-basis: 15%;
+}
+.rating p:last-child{
+    text-align: end;
+    flex-basis: 10%;
+}
+.ReviewBar{
+    flex-basis: 75%;
+    overflow: hidden;
+}
+.ReviewBar div{
+    padding: .3rem;
+    border-radius: 0 .6rem .6rem 0;
+}
+@media (max-width: 900px){
+    .rating p:first-child{
+        flex-basis: 30%;
+    }
+    .ReviewBar div{
+        flex-basis: 65%;
+    }
+}
+@media(max-width: 600px){
+    .rating{
+        flex-direction: column;
+        gap: .25rem;
+        align-items: flex-start;
+    }
+    .ReviewBar{
+        width: 100%;
+    }
+}

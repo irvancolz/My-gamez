@@ -1,7 +1,10 @@
 import style from './home.module.css';
-import Components from '../components'
+import Components from '../components';
+import { Sumbit } from './api/hello';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+
   const {NestedLayout, MainCarousel,GameList} = Components();
   const MainCarouselContent = [
     {

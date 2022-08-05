@@ -2,38 +2,13 @@ import style from "./Ratings.module.css";
 import { useState } from "react";
 import AddRating from "../AddRating";
 import Star from "../Star";
+import Reviewbar from "../ReviewBar";
 
-export default function Ratings({rate = []}){
+export default function Ratings({ratings = []}){
 
     const [isOpenRate, setIsOpenRate] = useState(false);
     const star = 4.42
-    const starRating = star.toFixed(0);
-    const ratings =  [
-        {
-            "id": 5,
-            "title": "exceptional",
-            "count": 196,
-            "percent": 54.29
-        },
-        {
-            "id": 4,
-            "title": "recommended",
-            "count": 132,
-            "percent": 36.57
-        },
-        {
-            "id": 3,
-            "title": "meh",
-            "count": 27,
-            "percent": 7.48
-        },
-        {
-            "id": 1,
-            "title": "skip",
-            "count": 6,
-            "percent": 1.66
-        }
-    ]
+
     function getTotalRatings(review){
         let total = 0;
         review.forEach(item =>{
@@ -59,18 +34,9 @@ export default function Ratings({rate = []}){
                 <p><span>{star}</span> average points from <span>{totalRating}</span> Reviews</p>
             </div>
             <div className={style.ratingContainer}>
-                {ratings.map((rating, index) =>{
+                {ratings.map(rating =>{
                     return(
-                    <div className={style.rating} key={index} title={`${rating.title} ${rating.count} reviews`}>
-                        <p>{rating.title}</p>
-                        <div className={style.ReviewBar}>
-                            <div style={{
-                                width: `${rating.percent}%`,
-                                background: `var(${rating.title === 'exceptional' ? '--green-bg-col' : rating.title === 'recommended' ? '--cyan-bg-col' : rating.title === 'meh' ? '--gold-bg-col' : '--red-bg-col'})`
-                            }}></div>
-                    </div>
-                    <p>{rating.count}</p>
-                </div>
+                    <Reviewbar key={rating.id} rating={rating}/>
                     )
                 })}
             </div>

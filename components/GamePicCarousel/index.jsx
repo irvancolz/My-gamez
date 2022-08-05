@@ -8,7 +8,7 @@ import LightBox from '../Lightbox';
 export default function GamePicCarousel(){
     const sliderRef = useRef(null);
     const [carouselCounter, setCarouselCounter] = useState(0);
-    const [showImg, setShowImg] = useState(true);
+    const [showImg, setShowImg] = useState(false);
 
 
     // controlling interaction

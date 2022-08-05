@@ -129,7 +129,7 @@ export default function GameCard({content = {}, links=''}){
                             {content.parent_platforms.map(content =>{
                                 return(
                                     <span key={content.platform.id} title={content.platform.name}>
-                                        <Link href={`/platforms/${content.platform.slug}`}>
+                                        <Link href={`/Platforms/${content.platform.slug}`}>
                                             <PlatformLogo logo={content.platform.slug} />
                                         </Link>
                                     </span>

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useEffect}from 'react';
 import Components from '../../../components';
 import style from './game.module.css';
+import { useRouter } from 'next/router';
+
 
 export default function index() { 
+    const {query} = useRouter();
 
     const gameContent = 
     [
@@ -1518,10 +1521,10 @@ export default function index() {
             <div className={style.mainContainer}>
                     <MainBanner dataBg={game.background_image} dataBgAdd={game.background_image_additional}/>
                 <div className={style.content}>
-                        <GameTitle title={game.name} id={game.id} />
-                        <GameDesc storesSlug={game.stores} desc={game.description}/>
+                    <GameTitle title={game.name} id={game.id} />
+                    <GameDesc storesSlug={game.stores} desc={game.description}/>
                     <div className={style.bgwrapper}>
-                        <Ratings />
+                        <Ratings ratings={game.ratings}/>
                         <div className={style.wrapper}>
                             <Requirements />
                             <Achievements />
